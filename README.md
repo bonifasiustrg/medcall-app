@@ -1,16 +1,22 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 
-# Cashy
+# MedCall
 ~
 This laravel project also implementing:
 - Arsitektur MVC (Model-View-Controller)
+
+TODO:
 - Login Authentication and Token Bearer for protecting the route using Laravel Sanctum
+- Number Queueing for patient
+- Reservation
+- Urgent Call
+- Appointement Reminder
 
 ### Get Start with This Project
 Clone this project
 ```git
-git clone https://github.com/bonifasiustrg/CashyBackend
+git clone https://github.com/bonifasiustrg/medcall-app
 ```
 
 Open Terminal
