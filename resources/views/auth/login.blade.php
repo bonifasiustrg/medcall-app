@@ -16,12 +16,12 @@
         <input type="email" class="form-control form-control-lg w-50 -71" id="email" name="email" required placeholder="Masukkan Alamat Email">
 
         <label for="password" style="color: #2771CA; font-size: 14px;" class="fw-bold">Password*</label>
-        <input type="password" class="form-control" id="password" name="password" required placeholder="Masukkan Kata Sandi">
+        <input type="password" class="form-control form-control-lg w-50 -71" id="password" name="password" required placeholder="Masukkan Kata Sandi">
 
         <label for="card_number" style="color: #2771CA; font-size: 14px;" class="fw-bold">Nomor Kartu*</label>
-        <input type="text" class="form-control" id="card_number" name="card_number" required placeholder="Masukkan Nomor Kartu">
+        <input type="text" class="form-control form-control-lg w-50 -71" id="card_number" name="card_number" required placeholder="Masukkan Nomor Kartu">
         </div>
-
+        <br>
             <button type="submit" class="btn btn-primary" class="fw-bold" style="#2771CA">Login</button>
             <p><a href="/forgot-password" class="text-decoration-none" style="color: #000000">Lupa Kata Sandi?</a></p>
 </a>
