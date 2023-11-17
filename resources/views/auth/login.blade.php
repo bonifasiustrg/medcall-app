@@ -11,9 +11,14 @@
         <p class="text-center", style="color: #555568">Silakan Masukkan Alamat Email, Kata Sandi dan Nomor Kartu Pengobatan Anda</p>
         <form action="#">
 
-            <span style="color: #2771CA; font-size: 14px;" class="fw-bold">Email*</span><br>
-            <input type="email" name="email" required placeholder="Masukkan Alamat Email">
-            <br>
+        <div class="form-group">
+        <label for="email" style="color: #2771CA; font-size: 14px;" class="fw-bold">Email*</label>
+        <input type="email" class="form-control" id="email" name="email" required placeholder="Masukkan Alamat Email">
+
+        <label for="password" style="color: #2771CA; font-size: 14px;" class="fw-bold">Password*</label>
+        <input type="password" class="form-control" id="password" name="password" required placeholder="Masukkan Kata Sandi">
+        </div>
+
             <span style="color: #2771CA; font-size: 14px;" class="fw-bold">Password*</span><br>
             <input type="password" name="password" placeholder="Masukkan Kata Sandi">
             <br>
