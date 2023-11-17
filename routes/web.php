@@ -19,6 +19,10 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/pengingatjanji', function () {
+    return view('pengingatjanji');
+});
+
 
 Auth::routes();
 
