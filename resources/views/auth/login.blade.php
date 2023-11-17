@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="row align-items-start">
     <div class="col">
-        <img src="{{ asset('image/latar.png') }}" alt="" class="img-fluid w-100">
+        <img src="{{ asset('image/latar.png') }}" alt="" class="img-fluid w-52">
     </div>
     <div class="col">
         <h1 class="text-center", style="color: #2771CA">Selamat Datang!</h1>
