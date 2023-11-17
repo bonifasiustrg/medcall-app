@@ -13,7 +13,7 @@
 
         <div class="form-group">
         <label for="email" style="color: #2771CA; font-size: 14px;" class="fw-bold">Email*</label>
-        <input type="email" class="form-control" id="email" name="email" required placeholder="Masukkan Alamat Email">
+        <input type="email" class="form-control form-control-lg w-50 -71" id="email" name="email" required placeholder="Masukkan Alamat Email">
 
         <label for="password" style="color: #2771CA; font-size: 14px;" class="fw-bold">Password*</label>
         <input type="password" class="form-control" id="password" name="password" required placeholder="Masukkan Kata Sandi">
