@@ -29,9 +29,10 @@
         
         <p>Atau Login Menggunakan</p>
         <div>
-            <img src="image.jpg" alt="Image" class="img-fluid">
+            <img src="{{ asset('image/google.png') }}" alt="Image" class="img-fluid">
+            <img src="{{ asset('image/phone.png') }}" alt="Image" class="img-fluid"> 
         </div>
-        <a href="#">MEDCALL</a>
+        <img src="{{ asset('image/MedCall.png') }}" alt="Image" class="img-fluid">
     </div>
     </div>
     
