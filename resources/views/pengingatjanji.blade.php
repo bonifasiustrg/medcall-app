@@ -43,32 +43,57 @@
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th>Tanggal</th>
+              <th>Sen</th>
+              <th>Sel</th>
+              <th>Rab</th>
+              <th>Kam</th>
+              <th>Jum</th>
+              <th>Sab</th>
+              <th>Min</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>23</td>
-            </tr>
+              </tr>
             <tr>
-              <td>24</td>
-            </tr>
+              </tr>
             <tr>
-              <td>25</td>
-            </tr>
+              </tr>
             <tr>
-              <td>26</td>
-            </tr>
+              </tr>
             <tr>
-              <td>27</td>
-            </tr>
-            <tr>
-              <td>28</td>
-            </tr>
-            <tr>
-              <td>29</td>
-            </tr>
+              </tr>
           </tbody>
         </table>
       </div>
       <div class="col-md-10">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Waktu</th>
+              <th>Dokter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>14:20</td>
+              <td>Dr. Indra Perkasa</td>
+            </tr>
+            <tr>
+              <td>14:40</td>
+              <td>Dr. Dewi Lestari</td>
+            </t </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer bg-dark text-light">
+    <div class="container">
+      <span class="text-muted">Copyright &copy; 2023 MEDCALL</span>
+    </div>
+  </footer>
+
+  </body>
+</html>
