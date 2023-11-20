@@ -4,10 +4,19 @@
   <meta charset="UTF-8">
   <title>MEDCALL</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #EFF5FF;
+    }
+    .navbar-atas {
+      background-color: #EFF5FF;
+    }
+  </style>
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!-- Navbar atas -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-atas">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">MEDCALL</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +40,6 @@
       </div>
     </div>
   </nav>
-
   <div class="container">
     <h2>Form Pendaftaran Pengobatan</h2>
     <form>
