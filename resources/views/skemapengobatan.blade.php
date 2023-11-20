@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+=======
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -76,6 +82,7 @@
 
   <!-- Formulir -->
   <div class="container">
+>>>>>>> 1dde117729f0781bff5c2813de760c7a6506f41d
     <h2>Form Pendaftaran Pengobatan</h2>
     <form>
         <div class="form-group">
@@ -107,13 +114,6 @@
     </form>
   </div>
 
-  <!-- Navbar pada bagian bawah -->
-  <nav class="navbar fixed-bottom navbar-light" style="background-color: #527BC0;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-    </div>
-  </nav>
-
   <script>
     function updateDokterOptions() {
       var poliSelect = document.getElementById('poli');
@@ -143,6 +143,4 @@
     // Panggil fungsi saat halaman dimuat
     window.onload = updateDokterOptions;
   </script>
-
-</body>
-</html>
+@endsection
