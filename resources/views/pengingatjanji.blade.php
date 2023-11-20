@@ -1,83 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- <title>Pengingat Janji Konsultasi</title>
- <!-- Bootstrap CSS -->
- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
- <!-- FullCalendar CSS -->
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@5.10.2/main.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedCall</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<div class="container mt-5">
- <div class="row">
-    <div class="col-md-6">
-      <!-- Kalender -->
-      <div id="calendar"></div>
+    <div class="container">
+        <h2 class="text-center mt-5">MedCall</h2>
+        <h4 class="text-center mb-5">Jadwal Konsultasi Mendatang</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Hari</th>
+                    <th scope="col">Jam</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Senin</td>
+                    <td>14.20</td>
+                </tr>
+                <tr>
+                    <td>Selasa</td>
+                    <td>14.40</td>
+                </tr>
+                <!-- Add more rows for other days -->
+            </tbody>
+        </table>
+        <h4 class="text-center mt-5">Contacts</h4>
+        <p class="text-center">Konsultasi dengan dr. Indra Perkasa</p>
     </div>
-    <div class="col-md-6">
-      <!-- Formulir Pengingat Janji -->
-      <form>
-        <div class="form-group">
-          <label for="tanggal">Tanggal Konsultasi*</label>
-          <input type="date" class="form-control" id="tanggal" name="tanggal">
-        </div>
-        <div class="card">
-          <div class="card-header">
-            Pengingat Janji Konsultasi
-          </div>
-          <div class="card-body">
-            <p>Tanggal: 1 Desember 2024</p>
-            <p>Dokter: Dr. Suktomo</p>
-            <p>Deskripsi: Anda memiliki janji konsultasi dengan Dr. Suktomo pada tanggal 1 Desember 2024. Pastikan untuk hadir tepat waktu.</p>
-          </div>
-        </div>
-      </form>
-    </div>
- </div>
-</div>
-
-<!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<!-- FullCalendar JS and dependencies -->
-<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@5.10.2/main.js"></script>
-
-<script>
- document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-      events: [
-        {
-          title: 'Janji Konsultasi',
-          start: '2024-12-01',
-          description: 'Janji konsultasi dengan Dr. Suktomo'
-        }
-      ],
-      eventRender: function(info) {
-        // Mengubah tampilan event di kalender
-        info.el.style.backgroundColor = '#ffcc00';
-        info.el.style.color = '#000';
-      },
-      dayCellContent: function(info) {
-        // Menetapkan latar belakang untuk sel kalender
-        info.dayEl.style.backgroundColor = '#BBD4FB';
-      },
-      eventClick: function(info) {
-        // Menampilkan notes saat diklik
-        alert('Deskripsi: ' + info.event.extendedProps.description);
-      }
-    });
-
-    calendar.render();
- });
-</script>
-
 </body>
 </html>
