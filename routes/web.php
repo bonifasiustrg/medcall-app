@@ -28,6 +28,9 @@ Route::get('/skemaobat', function () {
 Route::get('/jadwal', function () {
     return view('jadwaldokter');
 });
+Route::get('/darurat', function () {
+    return view('darurat');
+});
 
 Auth::routes();
 
