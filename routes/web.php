@@ -22,6 +22,9 @@ Route::get('/login', function () {
 Route::get('/pengingatjanji', function () {
     return view('pengingatjanji');
 });
+Route::get('/skemaobat', function () {
+    return view('skemapengobatan');
+});
 
 
 Auth::routes();
