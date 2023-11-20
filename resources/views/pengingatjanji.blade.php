@@ -6,6 +6,8 @@
   <title>Pengingat Janji Konsultasi</title>
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FullCalendar CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@5.10.2/main.css"/>
 </head>
 <body>
 
@@ -38,7 +40,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <!-- FullCalendar JS and dependencies -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@5.10.2/main.css"/>
 <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@5.10.2/main.js"></script>
 
 <script>
