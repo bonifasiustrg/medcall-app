@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 @extends('layouts.app')
 
 @section('content')
 <div class="container">
-=======
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -18,18 +16,13 @@
       position: relative;
     }
 
-    .navbar-atas {
-      background-color: #EFF5FF;
-      color: #000000;
-    }
-
     .background-box {
         position: absolute;
         top: 0;
         left: 50%; /* Pusatkan box ke tengah */
         transform: translateX(-50%); /* Pusatkan box ke tengah */
         width: 95%; /* Sesuaikan lebar sesuai kebutuhan */
-        height: 500px; /* Sesuaikan tinggi box sesuai kebutuhan */
+        height: 400px; /* Sesuaikan tinggi box sesuai kebutuhan */
         background-color: #D1E7FF;
         margin-left: 0; /* Tambahkan margin kiri otomatis */
         margin-right: 0; /* Tambahkan margin kanan otomatis */
@@ -54,35 +47,8 @@
   <!-- Kotak persegi panjang di background -->
   <div class="background-box"></div>
 
-  <!-- Navbar atas -->
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-atas" style="background-color: #527BC0;">
-    <div class="container-fluid">
-    <a><img src="{{ asset('image/navbar.png') }}" alt="" class="img-fluid w-52"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Tentang</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Kontak</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pencarian</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Akun</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
   <!-- Formulir -->
   <div class="container">
->>>>>>> 1dde117729f0781bff5c2813de760c7a6506f41d
     <h2>Form Pendaftaran Pengobatan</h2>
     <form>
         <div class="form-group">
@@ -106,13 +72,20 @@
         </div>
         <div class="form-group">
             <label for="dokter">Pilih Dokter*</label>
-            <select class="form-control" id="dokter" name="dokter">
+            <select class="form-control" id="dokter" name="dokter" placeholder="Masukkan Nama Lengkap Anda">
                 <!-- Opsi dokter akan diperbarui dengan JavaScript -->
             </select>
         </div>
         <button type="submit" class="btn btn-primary">SIMPAN</button>
     </form>
   </div>
+
+  <!-- Navbar pada bagian bawah -->
+  <nav class="navbar fixed-bottom navbar-light" style="background-color: #527BC0;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+    </div>
+  </nav>
 
   <script>
     function updateDokterOptions() {
