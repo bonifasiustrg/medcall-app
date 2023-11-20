@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- <title>Pengingat Janji Konsultasi</title>
- <!-- Bootstrap CSS -->
- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
- <!-- FullCalendar CSS -->
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@5.10.2/main.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Pengingat Janji Konsultasi</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FullCalendar CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@5.10.2/main.css"/>
 </head>
 <body>
 
 <div class="container mt-5">
- <h2>Pengingat Janji Konsultasi</h2>
- <div class="row">
+  <h2>Pengingat Janji Konsultasi</h2>
+  <div class="row">
     <div class="col-md-6">
       <!-- Kalender -->
       <div id="calendar"></div>
@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
- </div>
+  </div>
 </div>
 
 <!-- Bootstrap JS and dependencies -->
@@ -43,7 +43,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@5.10.2/main.js"></script>
 
 <script>
- document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -60,6 +60,10 @@
         info.el.style.backgroundColor = '#ffcc00';
         info.el.style.color = '#000';
       },
+      dayCellContent: function(info) {
+        // Menetapkan latar belakang untuk sel kalender
+        info.dayEl.style.backgroundColor = '#BBD4FB';
+      },
       eventClick: function(info) {
         // Menampilkan notes saat diklik
         alert('Deskripsi: ' + info.event.extendedProps.description);
@@ -67,7 +71,7 @@
     });
 
     calendar.render();
- });
+  });
 </script>
 
 </body>
