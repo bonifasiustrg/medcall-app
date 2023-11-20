@@ -6,15 +6,40 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <style>
     body {
+      margin: 0; /* Menghilangkan margin default */
+      padding: 0; /* Menghilangkan padding default */
       background-color: #EFF5FF;
+      position: relative;
     }
+
     .navbar-atas {
       background-color: #EFF5FF;
       color: #000000;
     }
+
+    .background-box {
+        position: absolute;
+        top: 0;
+        left: 50%; /* Pusatkan box ke tengah */
+        transform: translateX(-50%); /* Pusatkan box ke tengah */
+        width: 95%; /* Sesuaikan lebar sesuai kebutuhan */
+        height: 400px; /* Sesuaikan tinggi box sesuai kebutuhan */
+        background-color: #ACC4DE;
+        margin-left: 0; /* Tambahkan margin kiri otomatis */
+        margin-right: 0; /* Tambahkan margin kanan otomatis */
+    }
+
+
+    .container {
+      position: relative;
+      z-index: 1; /* Mengatur indeks z agar konten berada di atas background-box */
+    }
   </style>
 </head>
 <body>
+
+  <!-- Kotak persegi panjang di background -->
+  <div class="background-box"></div>
 
   <!-- Navbar atas -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-atas">
@@ -67,7 +92,7 @@
         </div>
         <div class="form-group">
             <label for="dokter">Pilih Dokter*</label>
-            <select class="form-control" id="dokter" name="dokter" placeholder="Masukkan Nama Lengkap Anda">
+            <select class="form-control" id="dokter" name="dokter">
                 <!-- Opsi dokter akan diperbarui dengan JavaScript -->
             </select>
         </div>
@@ -88,7 +113,7 @@
       var dokterSelect = document.getElementById('dokter');
       
       // Kosongkan opsi dokter terlebih dahulu
-      dokterSelect.innerHTML = "Masukkan Nama Lengkap Anda";
+      dokterSelect.innerHTML = "";
 
       // Tambahkan opsi dokter berdasarkan pilihan poli
       if (poliSelect.value === "Poli Penyakit Dalam") {
