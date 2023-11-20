@@ -38,5 +38,10 @@
             <button type="submit" class="btn btn-primary">SIMPAN</button>
         </form>
     </div>
+    <nav class="navbar fixed-bottom navbar-light bg-primary">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar Bagian Bawah</a>
+        </div>
+    </nav>
 </body>
 </html>
