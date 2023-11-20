@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pengingat Janji Konsultasi</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0v4XvqYRb/UAA4XqMQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <body>
 
@@ -38,7 +38,7 @@
         <div class="card-body">
 
           <p>
-            Tanggal 24 Desember 2024, Anda memiliki janji konsultasi dengan dr. Suktomo.
+            Tanggal <span id="tanggal"></span>, Anda memiliki janji konsultasi dengan dr. Suktomo.
           </p>
 
         </div>
@@ -51,7 +51,7 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-B0v4XvqYRb/UAA4XqMQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
 <script>
@@ -76,6 +76,12 @@ $(document).ready(function() {
     ]
   });
 
+  // Get today's date
+  var today = moment().format('YYYY-MM-DD');
+
+  // Set the tanggal pengingat
+  $('#tanggal').text(today);
+
   // Add notes pengingat
   calendar.on('eventClick', function(event) {
     if (event.title === 'Konsultasi dengan dr. Suktomo') {
@@ -89,6 +95,5 @@ $(document).ready(function() {
 });
 
 </script>
-
 </body>
 </html>
