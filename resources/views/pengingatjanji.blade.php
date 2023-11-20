@@ -7,32 +7,32 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">MEDCALL</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Tentang</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Kontak</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pencarian</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Akun</a>
-          </li>
-        </ul>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">MEDCALL</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Kontak</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pencarian</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Akun</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <div class="container">
     <div class="row">
       <div class="col-md-12">
         <h1>Jadwal Konsultasi Mendatang</h1>
@@ -72,32 +72,3 @@
         </table>
       </div>
       <div class="col-md-10">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Waktu</th>
-              <th>Dokter</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>14:20</td>
-              <td>Dr. Indra Perkasa</td>
-            </tr>
-            <tr>
-              <td>14:40</td>
-              <td>Dr. Dewi Lestari</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <footer class="footer bg-dark text-light">
-    <div class="container">
-      <span class="text-muted">Copyright &copy; 2023 MEDCALL</span>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha
