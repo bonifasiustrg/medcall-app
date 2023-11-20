@@ -25,7 +25,9 @@ Route::get('/pengingatjanji', function () {
 Route::get('/skemaobat', function () {
     return view('skemapengobatan');
 });
-
+Route::get('/jadwal', function () {
+    return view('jadwaldokter');
+});
 
 Auth::routes();
 
