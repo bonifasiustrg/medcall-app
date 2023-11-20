@@ -17,9 +17,9 @@
 <body>
 
   <!-- Navbar atas -->
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-atas">
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-atas" style="background-color: #527BC0;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">MEDCALL</a>
+    <a><img src="{{ asset('image/navbar.png') }}" alt="" class="img-fluid w-52"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
