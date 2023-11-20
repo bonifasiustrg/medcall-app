@@ -67,7 +67,7 @@
         </div>
         <div class="form-group">
             <label for="dokter">Pilih Dokter*</label>
-            <select class="form-control" id="dokter" name="dokter">
+            <select class="form-control" id="dokter" name="dokter" placeholder="Masukkan Nama Lengkap Anda">
                 <!-- Opsi dokter akan diperbarui dengan JavaScript -->
             </select>
         </div>
@@ -88,7 +88,7 @@
       var dokterSelect = document.getElementById('dokter');
       
       // Kosongkan opsi dokter terlebih dahulu
-      dokterSelect.innerHTML = "";
+      dokterSelect.innerHTML = "Masukkan Nama Lengkap Anda";
 
       // Tambahkan opsi dokter berdasarkan pilihan poli
       if (poliSelect.value === "Poli Penyakit Dalam") {
