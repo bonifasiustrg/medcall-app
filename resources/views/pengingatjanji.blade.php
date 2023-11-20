@@ -18,11 +18,29 @@
 
         #calendar {
             max-width: 600px;
-            margin: 0 auto;
+            float: left;
+            margin-right: 20px; /* Jarak antara kalender dan notifikasi */
             background-color: #f8f9fa;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-left: 0; /* Geser ke kiri */
+        }
+
+        #notification-box {
+            width: 300px;
+            float: left;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+
+        .fc-event {
+            cursor: pointer;
+        }
+
+        .fc-highlight {
+            background-color: #ffeeba; /* Warna penyorotan tanggal konsultasi */
+            opacity: 0.8;
         }
     </style>
     <!-- Menambahkan font Lato dari Google Fonts -->
@@ -31,6 +49,13 @@
 <body>
     <div class="container">
         <div id="calendar"></div>
+        <div id="notification-box">
+            <h4>Notifikasi Konsultasi</h4>
+            <ul>
+                <li>Konsultasi dengan Dr. Suktomo pada 25 November 2023</li>
+                <!-- Tambahkan notifikasi konsultasi lainnya di sini -->
+            </ul>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -43,6 +68,27 @@
         $(document).ready(function() {
             $('#calendar').fullCalendar({
                 // Tambahkan opsi dan peristiwa Anda di sini
+                events: [
+                    {
+                        title: 'Konsultasi Dr. Suktomo',
+                        start: '2023-11-25', // Tanggal konsultasi
+                        description: 'Konsultasi dengan Dr. Suktomo pada 25 November 2023'
+                    }
+                    // Anda dapat menambahkan peristiwa konsultasi lainnya di sini
+                ],
+                eventRender: function(event, element) {
+                    element.attr('title', event.description);
+                },
+                dayRender: function(date, cell) {
+                    if (date.format() === '2023-11-25') {
+                        cell.addClass('fc-highlight'); // Menyoroti tanggal konsultasi
+                    }
+                },
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                }
             });
         });
     </script>
