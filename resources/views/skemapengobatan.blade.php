@@ -23,10 +23,17 @@
         left: 50%; /* Pusatkan box ke tengah */
         transform: translateX(-50%); /* Pusatkan box ke tengah */
         width: 95%; /* Sesuaikan lebar sesuai kebutuhan */
-        height: 400px; /* Sesuaikan tinggi box sesuai kebutuhan */
-        background-color: #ACC4DE;
+        height: 500px; /* Sesuaikan tinggi box sesuai kebutuhan */
+        background-color: #D1E7FF;
         margin-left: 0; /* Tambahkan margin kiri otomatis */
         margin-right: 0; /* Tambahkan margin kanan otomatis */
+    }
+
+    .btn-primary {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        margin-top: 20px;
     }
 
 
