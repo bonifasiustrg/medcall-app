@@ -45,29 +45,7 @@
     <img src="{{ asset('image/emergency.png') }}" alt="Gambar contoh" class="rounded">
 </div>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    <i class="fas fa-phone"></i>
-</button>
-
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="myModalLabel">Nomor Telepon</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>085694532122</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-      </div>
-    </div>
-  </div>
+<div>
+    <img src="{{ asset('image/emergencycall.png') }}" alt="Image" class="img-fluid">
 </div>
-
-
-  
 
