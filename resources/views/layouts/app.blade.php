@@ -21,11 +21,16 @@
 </head>
 <body>
     <div id="app">
+        @if(Auth::check())
+        <!--buat navbar -->
+        @endif
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+            <a class="navbar-brand" href="{{ url('/dashboard') }}">
+    <img src="{{ asset('image/navbar.png') }}" alt="Navbar Image" class="img-fluid w-40">
+    
+</a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -75,7 +80,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 bg-blue-200">
             @yield('content')
         </main>
     </div>
