@@ -45,7 +45,8 @@
     <img src="{{ asset('image/emergency.png') }}" alt="Gambar contoh" class="rounded">
 </div>
 
-<div>
+
+<div style="text-align: right;">
     <img src="{{ asset('image/emergencycall.png') }}" alt="Image" class="img-fluid">
 </div>
 
