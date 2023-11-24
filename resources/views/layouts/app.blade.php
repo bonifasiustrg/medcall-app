@@ -26,7 +26,7 @@
         @endif
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="navbar-brand" href="{{ url('/dashboard') }}">
     <img src="{{ asset('image/navbar.png') }}" alt="Navbar Image" class="img-fluid w-40">
     
 </a>
@@ -80,7 +80,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 bg-blue-200">
             @yield('content')
         </main>
     </div>
