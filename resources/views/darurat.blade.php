@@ -41,12 +41,17 @@
       </div>
     </div>
   </nav>
-<div class="text-center">
+  <div class="text-center">
     <img src="{{ asset('image/emergency.png') }}" alt="Gambar contoh" class="rounded">
-</div>
+  </div>
 
 
-<div style="text-align: right;">
+  <div style="text-align: right;">
     <img src="{{ asset('image/emergencycall.png') }}" alt="Image" class="img-fluid">
-</div>
+  </div>
+</body>
+
+<footer>
+<img src="{{ asset('image/Rectangle 4213.png') }}" alt="Image" class="img-fluid">
+</footer>
 
