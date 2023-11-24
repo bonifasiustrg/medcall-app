@@ -29,7 +29,7 @@ Route::get('/pengingatjanji', function () {
 Route::get('/skemaobat', function () {
     return view('skemapengobatan');
 });
-Route::get('/jadwal', function () {
+Route::get('/jadwaldokter', function () {
     return view('jadwaldokter');
 });
 Route::get('/darurat', function () {
