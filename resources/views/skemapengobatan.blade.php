@@ -9,48 +9,80 @@
   <title>MEDCALL</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <style>
-    body {
-      margin: 0; /* Menghilangkan margin default */
-      padding: 0; /* Menghilangkan padding default */
-      background-color: #EFF5FF;
-      position: relative;
-    }
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #EFF5FF;
+        position: relative;
+      }
 
-    .background-box {
+      .background-box {
         position: absolute;
         top: 0;
-        left: 50%; /* Pusatkan box ke tengah */
-        transform: translateX(-50%); /* Pusatkan box ke tengah */
-        width: 95%; /* Sesuaikan lebar sesuai kebutuhan */
-        height: 400px; /* Sesuaikan tinggi box sesuai kebutuhan */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        min-height: 350px; /* Change height to min-height */
         background-color: #D1E7FF;
-        margin-left: 0; /* Tambahkan margin kiri otomatis */
-        margin-right: 0; /* Tambahkan margin kanan otomatis */
-    }
+        margin-left: 30px;
+        margin-right: 5px;
+        text-align: right; /* Align text (including the image) to the right */
+        border-radius: 20px; /* Rounded corners */
+        overflow: hidden; /* Hide overflowing content (like the rounded corners) */
+      }
 
-    .btn-primary {
+      .background-box img {
+        width: 100%; /* Set the width of the image to 100% of the background box */
+        height: auto;
+        position: absolute;
+        top: 50%; /* Center the image vertically */
+        right: 0; /* Align the image to the right */
+        transform: translateY(-50%);
+      }
+
+      .btn-primary {
+        position: absolute;
+        top: 10cm;
+        left: 50%;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .container {
         position: relative;
         z-index: 1;
-        text-align: center;
-        margin-top: 20px;
-    }
+        margin-right: 10%;
+        padding-bottom: 60px; /* Add padding to the bottom for the fixed navbar */
+      }
 
+      h2 {
+        margin-left: 1cm;
+        margin-top: 0.5cm;
+      }
 
-    .container {
-      position: relative;
-      z-index: 1; /* Mengatur indeks z agar konten berada di atas background-box */
-    }
-  </style>
+      form {
+        max-width: 400px;
+        margin-left: 1cm;
+        margin-right: 12cm;
+        border-radius: 0px; /* Rounded corners for the form */
+        overflow: hidden; /* Hide overflowing content (like the rounded corners) */
+      }
+    </style>
 </head>
 <body>
 
   <!-- Kotak persegi panjang di background -->
-  <div class="background-box"></div>
+  <div class="background-box">
+    <img src="{{ asset('image/4893665 1.png') }}" alt="Gambar contoh" class="rounded" style="width: 550px; height: 350px;">
+  </div>
 
   <!-- Formulir -->
   <div class="container">
     <h2>Form Pendaftaran Pengobatan</h2>
     <form>
+        <!-- Form fields go here -->
         <div class="form-group">
             <label for="nama">Nama*</label>
             <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap Anda">
@@ -89,6 +121,7 @@
 
   <script>
     function updateDokterOptions() {
+      // Function content remains the same
       var poliSelect = document.getElementById('poli');
       var dokterSelect = document.getElementById('dokter');
       
@@ -113,7 +146,6 @@
       }
     }
 
-    // Panggil fungsi saat halaman dimuat
     window.onload = updateDokterOptions;
   </script>
 @endsection
