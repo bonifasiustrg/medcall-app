@@ -49,7 +49,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div id="calendar"></div>
     </div>
 

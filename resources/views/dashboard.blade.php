@@ -29,22 +29,23 @@
 
     <div class="row mt-5">
       <div class="col-md-4">
-          <button type="button" class="btn btn-light btn-icon-split rounded-30px" style="border-radius: 15px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);" href="/pengingatjanji">
+            <a href="/pengingatjanji" class="btn btn-light btn-icon-split rounded-30px" style="border-radius: 15px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
             <img src="{{ asset('image/konsultasi.png') }}">
             Jadwal Konsultasi
-            </button>
+            </a>
+
       </div>
       <div class="col-md-4">
-          <button type="button" class="btn btn-light btn-icon-split rounded-30px" style="border-radius: 15px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);" href="/jadwaldokter">
+          <a class="btn btn-light btn-icon-split rounded-30px" style="border-radius: 15px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);" href="/jadwaldokter">
             <img src="{{ asset('image/antrian.png') }}">
             Lihat Nomor Antrian
-            </button>
+            </a>
       </div>
       <div class="col-md-4">
-          <button type="button" class="btn btn-light btn-icon-split rounded-30px" style="border-radius: 15px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);" href="/jadwaldokter">
+          <a class="btn btn-light btn-icon-split rounded-30px" style="border-radius: 15px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);" href="/darurat">
             <img src="{{ asset('image/call.png') }}">
             Layanan Darurat
-            </button>
+            </a>
 </div>
 
   <!-- Navbar pada bagian bawah -->
