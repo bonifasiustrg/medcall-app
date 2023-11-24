@@ -5,86 +5,92 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>MEDCALL</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <style>
+    <meta charset="UTF-8">
+    <title>MEDCALL</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background-color: #EFF5FF;
-        position: relative;
-      }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #EFF5FF;
+            position: relative;
+        }
 
-      .background-box {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 95%;
-        height: 350px; /* Change height to min-height */
-        background-color: #D1E7FF;
-        margin-left: 30px;
-        margin-right: 5px;
-        text-align: right; /* Align text (including the image) to the right */
-        border-radius: 20px; /* Rounded corners */
-        overflow: hidden; /* Hide overflowing content (like the rounded corners) */
-      }
+        .background-box {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            height: 350px; /* Change height to min-height */
+            background-color: #D1E7FF;
+            margin-left: 30px;
+            margin-right: 5px;
+            text-align: right; /* Align text (including the image) to the right */
+            border-radius: 20px; /* Rounded corners */
+            overflow: hidden; /* Hide overflowing content (like the rounded corners) */
+        }
 
-      .background-box img {
-        width: 100%; /* Set the width of the image to 100% of the background box */
-        height: auto;
-        position: absolute;
-        top: 50%; /* Center the image vertically */
-        right: 0; /* Align the image to the right */
-        transform: translateY(-50%);
-      }
+        .background-box img {
+            width: 100%; /* Set the width of the image to 100% of the background box */
+            height: auto;
+            position: absolute;
+            top: 50%; /* Center the image vertically */
+            right: 0; /* Align the image to the right */
+            transform: translateY(-50%);
+        }
 
-      .btn-primary {
-        position: absolute;
-        top: 10cm;
-        left: 50%;
-        z-index: 1;
-        transform: translate(-50%, -50%);
-        text-align: center;
-      }
+        .btn-primary {
+            position: absolute;
+            top: 10cm;
+            left: 50%;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: #527BC0;
+        }
 
-      .container {
-        position: relative;
-        z-index: 1;
-        margin-right: 10%;
-        padding-bottom: 1px; /* Adjust the padding to reduce the size of the navbar */
-      }
+        .container {
+            position: relative;
+            z-index: 1;
+            margin-right: 10%;
+            padding-bottom: 1px; /* Adjust the padding to reduce the size of the navbar */
+        }
 
-      h2 {
-        margin-left: 1cm;
-        margin-top: 1cm;
-      }
+        h2 {
+            margin-left: 1cm;
+            margin-top: 1cm;
+        }
 
-      form {
-        max-width: 300px; /* Adjust the max-width based on your desired size */
-        margin-left: 1cm;
-        margin-right: 12cm;
-        border-radius: 0px; /* Rounded corners for the form */
-        overflow: hidden; /* Hide overflowing content (like the rounded corners) */
-      }
+        form {
+            max-width: 300px; /* Adjust the max-width based on your desired size */
+            margin-left: 1cm;
+            margin-right: 12cm;
+            border-radius: 0px; /* Rounded corners for the form */
+            overflow: hidden; /* Hide overflowing content (like the rounded corners) */
+        }
 
-      .title {
-        margin-top: 20px; /* Add margin to separate the title from the background box */
-      }
+        .title {
+            margin-top: 20px; /* Add margin to separate the title from the background box */
+        }
+
+        /* Add the following styles for button and spacing */
+        .btn-lihat-jadwal {
+            background-color: #527BC0;
+            color: #ffffff; /* Text color */
+            border: none;
+        }
     </style>
-
 </head>
 <body>
 
-  <!-- Kotak persegi panjang di background -->
-  <div class="background-box">
+<!-- Kotak persegi panjang di background -->
+<div class="background-box">
     <img src="{{ asset('image/4893665 1.png') }}" alt="Gambar contoh" class="rounded" style="width: 550px; height: 350px;">
-  </div>
+</div>
 
-  <!-- Formulir -->
-  <div class="container">
+<!-- Formulir -->
+<div class="container">
     <h2>Form Pendaftaran Pengobatan</h2>
     <form>
         <!-- Form fields go here -->
@@ -94,7 +100,7 @@
         </div>
         <div class="form-group">
             <label for="poli">Pilih Poli*</label>
-            <select class="form-control" id="poli" name="poli" onchange="updateDokterOptions()">
+            <select required placeholder="Silahkan pilih poli" class="form-control" id="poli" name="poli" onchange="updateDokterOptions()">
                 <option>Poli Umum</option>
                 <option>Poli Gigi dan Mulut</option>
                 <option>Poli Penyakit Dalam</option>
@@ -105,52 +111,63 @@
         </div>
         <div class="form-group">
             <label for="tanggal">Tanggal Konsultasi*</label>
-            <input type="date" class="form-control" id="tanggal" name="tanggal">
+            <div class="input-group">
+                <input type="date" class="form-control" id="tanggal" name="tanggal" required placeholder="Silahkan pilih tanggal">
+                <button type="button" class="btn btn-lihat-jadwal" onclick="lihatJadwal()">Lihat Jadwal Dokter</button>
+            </div>
         </div>
         <div class="form-group">
             <label for="dokter">Pilih Dokter*</label>
-            <select class="form-control" id="dokter" name="dokter" placeholder="Masukkan Nama Lengkap Anda">
+            <select required placeholder="Silahkan pilih dokter" class="form-control" id="dokter" name="dokter" placeholder="Masukkan Nama Lengkap Anda">
                 <!-- Opsi dokter akan diperbarui dengan JavaScript -->
             </select>
         </div>
         <button type="submit" class="btn btn-primary">SIMPAN</button>
     </form>
-  </div>
+</div>
 
-  <!-- Navbar pada bagian bawah -->
-  <nav class="navbar fixed-bottom navbar-light" style="background-color: #527BC0;">
+<!-- Navbar pada bagian bawah -->
+<nav class="navbar fixed-bottom navbar-light" style="background-color: #527BC0;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#">
     </div>
-  </nav>
+</nav>
 
-  <script>
+<script>
     function updateDokterOptions() {
-      // Function content remains the same
-      var poliSelect = document.getElementById('poli');
-      var dokterSelect = document.getElementById('dokter');
-      
-      // Kosongkan opsi dokter terlebih dahulu
-      dokterSelect.innerHTML = "";
+        // Function content remains the same
+        var poliSelect = document.getElementById('poli');
+        var dokterSelect = document.getElementById('dokter');
 
-      // Tambahkan opsi dokter berdasarkan pilihan poli
-      if (poliSelect.value === "Poli Penyakit Dalam") {
-        var dokters = ["dr. A", "dr. B", "dr. C"];
-      } else if (poliSelect.value === "Poli Gigi dan Mulut") {
-        var dokters = ["dr. D", "dr. E", "dr. F"];
-      } else {
-        // Tambahkan logika untuk poli lain jika diperlukan
-        var dokters = [];
-      }
+        // Kosongkan opsi dokter terlebih dahulu
+        dokterSelect.innerHTML = "";
 
-      for (var i = 0; i < dokters.length; i++) {
-        var option = document.createElement('option');
-        option.value = dokters[i];
-        option.text = dokters[i];
-        dokterSelect.appendChild(option);
-      }
+        // Tambahkan opsi dokter berdasarkan pilihan poli
+        if (poliSelect.value === "Poli Penyakit Dalam") {
+            var dokters = ["dr. A", "dr. B", "dr. C"];
+        } else if (poliSelect.value === "Poli Gigi dan Mulut") {
+            var dokters = ["dr. D", "dr. E", "dr. F"];
+        } else {
+            // Tambahkan logika untuk poli lain jika diperlukan
+            var dokters = [];
+        }
+
+        for (var i = 0; i < dokters.length; i++) {
+            var option = document.createElement('option');
+            option.value = dokters[i];
+            option.text = dokters[i];
+            dokterSelect.appendChild(option);
+        }
+    }
+
+    function lihatJadwal() {
+        // Add your logic to show the schedule here
+        alert('Menampilkan jadwal dokter...');
     }
 
     window.onload = updateDokterOptions;
-  </script>
+</script>
+</body>
+</html>
+
 @endsection
