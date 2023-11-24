@@ -23,7 +23,7 @@
         left: 50%;
         transform: translateX(-50%);
         width: 95%;
-        min-height: 350px; /* Change height to min-height */
+        height: 350px; /* Change height to min-height */
         background-color: #D1E7FF;
         margin-left: 30px;
         margin-right: 5px;
@@ -54,7 +54,7 @@
         position: relative;
         z-index: 1;
         margin-right: 10%;
-        padding-bottom: 60px; /* Add padding to the bottom for the fixed navbar */
+        padding-bottom: 1px; /* Adjust the padding to reduce the size of the navbar */
       }
 
       h2 {
@@ -70,6 +70,7 @@
         overflow: hidden; /* Hide overflowing content (like the rounded corners) */
       }
     </style>
+
 </head>
 <body>
 
