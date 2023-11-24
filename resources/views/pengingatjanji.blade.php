@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css"/>
     <style>
+        /* Tambahkan gaya CSS sesuai kebutuhan Anda */
         body {
-            font-family: 'Lato', sans-serif; /* Gunakan font Lato */
-            background-color: #EFF5FF; /* Warna latar belakang */
+            font-family: 'Lato', sans-serif;
+            background-color: #EFF5FF;
         }
 
         .container {
@@ -17,9 +18,9 @@
         }
 
         #calendar {
-            max-width: 600px;
+            max-width: 400px; /* Ukuran kalender dikecilkan */
             float: left;
-            margin-right: 20px; /* Jarak antara kalender dan notifikasi */
+            margin-right: 20px;
             background-color: #f8f9fa;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -39,7 +40,7 @@
         }
 
         .fc-highlight {
-            background-color: #ffeeba; /* Warna penyorotan tanggal konsultasi */
+            background-color: #ffeeba;
             opacity: 0.8;
         }
     </style>
@@ -53,8 +54,30 @@
             <h4>Notifikasi Konsultasi</h4>
             <ul>
                 <li>Konsultasi dengan Dr. Suktomo pada 25 November 2023</li>
+                <li>Konsultasi dengan Dr. Hasanudin pada 27 November 2023</li>
+                <li>Konsultasi dengan Dr. Kartika Santi pada 31 November 2023</li>
                 <!-- Tambahkan notifikasi konsultasi lainnya di sini -->
             </ul>
+        </div>
+    </div>
+
+    <!-- Modal untuk Detail Konsultasi -->
+    <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eventModalLabel">Detail Konsultasi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="event-description"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -67,27 +90,41 @@
     <script>
         $(document).ready(function() {
             $('#calendar').fullCalendar({
-                // Tambahkan opsi dan peristiwa Anda di sini
                 events: [
                     {
                         title: 'Konsultasi Dr. Suktomo',
-                        start: '2023-11-25', // Tanggal konsultasi
+                        start: '2023-11-25',
                         description: 'Konsultasi dengan Dr. Suktomo pada 25 November 2023'
+                    },
+                    {
+                        title: 'Konsultasi Dr. Hasanudin',
+                        start: '2023-11-27',
+                        description: 'Konsultasi dengan Dr. Hasanudin pada 27 November 2023'
+                    },
+                    {
+                        title: 'Konsultasi Dr. Kartika Santi',
+                        start: '2023-11-31',
+                        description: 'Konsultasi dengan Dr. Kartika Santi pada 31 November 2023'
                     }
-                    // Anda dapat menambahkan peristiwa konsultasi lainnya di sini
                 ],
                 eventRender: function(event, element) {
                     element.attr('title', event.description);
                 },
                 dayRender: function(date, cell) {
-                    if (date.format() === '2023-11-25') {
-                        cell.addClass('fc-highlight'); // Menyoroti tanggal konsultasi
+                    if (date.format() === '2023-11-25' || date.format() === '2023-11-27' || date.format() === '2023-11-31') {
+                        cell.addClass('fc-highlight');
                     }
                 },
                 header: {
                     left: 'prev,next today',
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay'
+                },
+                dayClick: function(date, jsEvent, view) {
+                    if (date.format() === '2023-11-25' || date.format() === '2023-11-27' || date.format() === '2023-11-31') {
+                        $('#event-description').text('Konsultasi pada ' + date.format('D MMMM YYYY'));
+                        $('#eventModal').modal('show');
+                    }
                 }
             });
         });
