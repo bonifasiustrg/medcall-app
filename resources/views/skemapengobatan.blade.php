@@ -22,7 +22,7 @@
             left: 50%;
             transform: translateX(-50%);
             width: 95%;
-            height: 350px; /* Change height to min-height */
+            height: 400px; /* Change height to min-height */
             background-color: #D1E7FF;
             margin-left: 30px;
             margin-right: 5px;
@@ -42,7 +42,7 @@
 
         .btn-primary {
             position: absolute;
-            top: 10cm;
+            top: 12cm;
             left: 50%;
             z-index: 1;
             transform: translate(-50%, -50%);
@@ -80,13 +80,21 @@
             color: #ffffff; /* Text color */
             border: none;
         }
+
+        .form-group {
+            margin-bottom: 0.5cm; /* Add spacing of 0.5cm between form groups */
+        }
+
+        #poli option[disabled] {
+        color: #808080; /* Change this to the desired shade of gray */
+        }
     </style>
 </head>
 <body>
 
 <!-- Kotak persegi panjang di background -->
 <div class="background-box">
-    <img src="{{ asset('image/4893665 1.png') }}" alt="Gambar contoh" class="rounded" style="width: 550px; height: 350px;">
+    <img src="{{ asset('image/4893665 1.png') }}" alt="Gambar contoh" class="rounded" style="width: 550px; height: 400px;">
 </div>
 
 <!-- Formulir -->
@@ -100,7 +108,8 @@
         </div>
         <div class="form-group">
             <label for="poli">Pilih Poli*</label>
-            <select required placeholder="Silahkan pilih poli" class="form-control" id="poli" name="poli" onchange="updateDokterOptions()">
+            <select class="form-control" id="poli" name="poli" required>
+                <option value="" disabled selected hidden>Silahkan pilih poli</option>
                 <option>Poli Umum</option>
                 <option>Poli Gigi dan Mulut</option>
                 <option>Poli Penyakit Dalam</option>
@@ -109,6 +118,7 @@
                 <!-- Tambahkan opsi lainnya di sini -->
             </select>
         </div>
+
         <div class="form-group">
             <label for="tanggal">Tanggal Konsultasi*</label>
             <div class="input-group">
