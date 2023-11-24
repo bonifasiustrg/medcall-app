@@ -59,15 +59,19 @@
 
       h2 {
         margin-left: 1cm;
-        margin-top: 0.5cm;
+        margin-top: 1cm;
       }
 
       form {
-        max-width: 400px;
+        max-width: 300px; /* Adjust the max-width based on your desired size */
         margin-left: 1cm;
         margin-right: 12cm;
         border-radius: 0px; /* Rounded corners for the form */
         overflow: hidden; /* Hide overflowing content (like the rounded corners) */
+      }
+
+      .title {
+        margin-top: 20px; /* Add margin to separate the title from the background box */
       }
     </style>
 
