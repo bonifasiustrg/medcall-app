@@ -52,6 +52,6 @@
 </body>
 
 <footer>
-<img src="{{ asset('image/Rectangle 4213.png') }}" alt="Image" class="img-fluid">
+  <img src="{{ asset('image/Rectangle 4213.png') }}" alt="Image" class="img-fluid">
 </footer>
 
