@@ -1,6 +1,11 @@
-<!DOCTYPE html>
+@extends('layouts.app')
+
+@section('content')
+    <!-- Navbar -->
+    <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Styled Bootstrap Calendar</title>
@@ -11,28 +16,24 @@
         body {
             font-family: 'Lato', sans-serif;
             background-color: #EFF5FF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
         }
 
         .container {
             margin-top: 50px;
+            text-align: center;
         }
 
         #calendar {
             max-width: 400px; /* Ukuran kalender dikecilkan */
-            float: left;
-            margin-right: 20px;
             background-color: #f8f9fa;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        #notification-box {
-            width: 300px;
-            float: left;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 15px;
+            margin: 0 auto; /* Agar kalender berada di tengah */
         }
 
         .fc-event {
@@ -48,17 +49,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div id="calendar"></div>
-        <div id="notification-box">
-            <h4>Notifikasi Konsultasi</h4>
-            <ul>
-                <li>Konsultasi dengan Dr. Suktomo pada 25 November 2023</li>
-                <li>Konsultasi dengan Dr. Hasanudin pada 27 November 2023</li>
-                <li>Konsultasi dengan Dr. Kartika Santi pada 31 November 2023</li>
-                <!-- Tambahkan notifikasi konsultasi lainnya di sini -->
-            </ul>
-        </div>
     </div>
 
     <!-- Modal untuk Detail Konsultasi -->
@@ -103,15 +95,15 @@
                     },
                     {
                         title: 'Konsultasi Dr. Kartika Santi',
-                        start: '2023-11-31',
-                        description: 'Konsultasi dengan Dr. Kartika Santi pada 31 November 2023'
+                        start: '2023-11-28',
+                        description: 'Konsultasi dengan Dr. Kartika Santi pada 28 November 2023'
                     }
                 ],
                 eventRender: function(event, element) {
                     element.attr('title', event.description);
                 },
                 dayRender: function(date, cell) {
-                    if (date.format() === '2023-11-25' || date.format() === '2023-11-27' || date.format() === '2023-11-31') {
+                    if (date.format() === '2023-11-25' || date.format() === '2023-11-27' || date.format() === '2023-11-28') {
                         cell.addClass('fc-highlight');
                     }
                 },
@@ -121,7 +113,7 @@
                     right: 'month,agendaWeek,agendaDay'
                 },
                 dayClick: function(date, jsEvent, view) {
-                    if (date.format() === '2023-11-25' || date.format() === '2023-11-27' || date.format() === '2023-11-31') {
+                    if (date.format() === '2023-11-25' || date.format() === '2023-11-27' || date.format() === '2023-11-28') {
                         $('#event-description').text('Konsultasi pada ' + date.format('D MMMM YYYY'));
                         $('#eventModal').modal('show');
                     }
@@ -131,3 +123,8 @@
     </script>
 </body>
 </html>
+
+
+    <!-- Skrip dan penutup body, serta skrip JavaScript -->
+    <!-- ... -->
+@endsection
