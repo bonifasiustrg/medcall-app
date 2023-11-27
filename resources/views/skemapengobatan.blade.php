@@ -9,6 +9,7 @@
     <title>MEDCALL</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
+        /* CSS Styles go here */
         body {
             margin: 0;
             padding: 0;
@@ -22,21 +23,21 @@
             left: 50%;
             transform: translateX(-50%);
             width: 95%;
-            height: 400px; /* Change height to min-height */
+            height: 380px;
             background-color: #D1E7FF;
             margin-left: 30px;
             margin-right: 5px;
-            text-align: right; /* Align text (including the image) to the right */
-            border-radius: 20px; /* Rounded corners */
-            overflow: hidden; /* Hide overflowing content (like the rounded corners) */
+            text-align: right;
+            border-radius: 20px;
+            overflow: hidden;
         }
 
         .background-box img {
-            width: 100%; /* Set the width of the image to 100% of the background box */
+            width: 100%;
             height: auto;
             position: absolute;
-            top: 50%; /* Center the image vertically */
-            right: 0; /* Align the image to the right */
+            top: 50%;
+            right: 0;
             transform: translateY(-50%);
         }
 
@@ -54,7 +55,7 @@
             position: relative;
             z-index: 1;
             margin-right: 10%;
-            padding-bottom: 1px; /* Adjust the padding to reduce the size of the navbar */
+            padding-bottom: 1px;
         }
 
         h2 {
@@ -63,48 +64,44 @@
         }
 
         form {
-            max-width: 300px; /* Adjust the max-width based on your desired size */
+            max-width: 300px;
             margin-left: 1cm;
             margin-right: 12cm;
-            border-radius: 0px; /* Rounded corners for the form */
-            overflow: hidden; /* Hide overflowing content (like the rounded corners) */
+            border-radius: 0px;
+            overflow: hidden;
         }
 
         .title {
-            margin-top: 20px; /* Add margin to separate the title from the background box */
+            margin-top: 20px;
         }
 
-        /* Add the following styles for button and spacing */
         .btn-lihat-jadwal {
             background-color: #527BC0;
-            color: #ffffff; /* Text color */
+            color: #ffffff;
             border: none;
         }
 
         .form-group {
-            margin-bottom: 0.5cm; /* Add spacing of 0.5cm between form groups */
+            margin-bottom: 0.5cm;
         }
 
         #poli option[disabled] {
-        color: #808080; /* Change this to the desired shade of gray */
+            color: #808080;
         }
     </style>
 </head>
 <body>
 
-<!-- Kotak persegi panjang di background -->
 <div class="background-box">
     <img src="{{ asset('image/4893665 1.png') }}" alt="Gambar contoh" class="rounded" style="width: 550px; height: 400px;">
 </div>
 
-<!-- Formulir -->
 <div class="container">
     <h2>Form Pendaftaran Pengobatan</h2>
-    <form>
-        <!-- Form fields go here -->
+    <form id="formPendaftaran" onsubmit="return validateForm()">
         <div class="form-group">
             <label for="nama">Nama*</label>
-            <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap Anda">
+            <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap Anda" required>
         </div>
         <div class="form-group">
             <label for="poli">Pilih Poli*</label>
@@ -115,28 +112,28 @@
                 <option>Poli Penyakit Dalam</option>
                 <option>Poli Jiwa</option>
                 <option>Poli Mata</option>
-                <!-- Tambahkan opsi lainnya di sini -->
             </select>
         </div>
 
         <div class="form-group">
             <label for="tanggal">Tanggal Konsultasi*</label>
             <div class="input-group">
-                <input type="date" class="form-control" id="tanggal" name="tanggal" required placeholder="Silahkan pilih tanggal">
+                <input type="date" class="form-control" id="tanggal" name="tanggal">
                 <button type="button" class="btn btn-lihat-jadwal" onclick="lihatJadwal()">Lihat Jadwal Dokter</button>
             </div>
         </div>
         <div class="form-group">
             <label for="dokter">Pilih Dokter*</label>
-            <select required placeholder="Silahkan pilih dokter" class="form-control" id="dokter" name="dokter" placeholder="Masukkan Nama Lengkap Anda">
-                <!-- Opsi dokter akan diperbarui dengan JavaScript -->
+            <select class="form-control" id="dokter" name="dokter" required>
+                <option value="" disabled selected hidden>Silahkan pilih dokter</option>
             </select>
         </div>
+
         <button type="submit" class="btn btn-primary">SIMPAN</button>
     </form>
+    <div id="errorMessage" style="color: red;"></div>
 </div>
 
-<!-- Navbar pada bagian bawah -->
 <nav class="navbar fixed-bottom navbar-light" style="background-color: #527BC0;">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
@@ -144,22 +141,36 @@
 </nav>
 
 <script>
+    function validateForm() {
+        var nama = document.getElementById('nama').value;
+        var poli = document.getElementById('poli').value;
+        var tanggal = document.getElementById('tanggal').value;
+        var dokter = document.getElementById('dokter').value;
+
+        if (nama === "" || poli === "" || tanggal === "" || dokter === "") {
+            document.getElementById('errorMessage').innerText = "Semua kolom dengan tanda * harus diisi.";
+            return false;
+        }
+
+        return true;
+    }
+
     function updateDokterOptions() {
-        // Function content remains the same
         var poliSelect = document.getElementById('poli');
         var dokterSelect = document.getElementById('dokter');
 
-        // Kosongkan opsi dokter terlebih dahulu
         dokterSelect.innerHTML = "";
 
-        // Tambahkan opsi dokter berdasarkan pilihan poli
-        if (poliSelect.value === "Poli Penyakit Dalam") {
-            var dokters = ["dr. A", "dr. B", "dr. C"];
+        if (poliSelect.value === "Poli Umum") {
+            var dokters = ["dr. Indra Perkasa", "dr. Crtistian Julian"];
         } else if (poliSelect.value === "Poli Gigi dan Mulut") {
-            var dokters = ["dr. D", "dr. E", "dr. F"];
-        } else {
-            // Tambahkan logika untuk poli lain jika diperlukan
-            var dokters = [];
+            var dokters = ["dr. Mamat Hasanudin", "dr. Indah Berlian", "dr. Mia Kalindra"];
+        } else if (poliSelect.value === "Poli Penyakit Dalam"){
+            var dokters = ["dr. Mega Handayani", "dr. Salsabila Susanti", "dr. Pramudya Bagus"];
+        } else if (poliSelect.value === "Poli Jiwa"){
+            var dokters = ["dr. Bambang Wijaksono"];
+        } else if (poliSelect.value === "Poli Mata"){
+            var dokters = ["dr. Sudantoro Agus"];
         }
 
         for (var i = 0; i < dokters.length; i++) {
@@ -171,7 +182,6 @@
     }
 
     function lihatJadwal() {
-        // Add your logic to show the schedule here
         alert('Menampilkan jadwal dokter...');
     }
 
