@@ -1,116 +1,122 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Calendar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f8f9fa;
+        }
 
-@section('content')
-<div class="container">
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Styled Bootstrap Calendar</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css"/>
-        <style>
-            /* Tambahkan gaya CSS sesuai kebutuhan Anda */
-            body {
-                font-family: 'Lato', sans-serif;
-                background-color: #EFF5FF;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                margin: 0;
-            }
+        #calendar {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-            .container {
-                margin-top: 50px;
-                text-align: center;
-            }
+        .fc-header-toolbar {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+            border: none;
+        }
 
-            #calendar {
-                max-width: 400px;
-                background-color: #add8e6; /* Warna biru muda */
-                border-radius: 10px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                margin: 0 auto;
-            }
+        .fc-button {
+            background-color: #87CEEB; /* Light blue color */
+            color: #fff;
+            border: none;
+        }
 
-            .fc-event {
-                cursor: pointer;
-            }
+        .fc-button:hover {
+            background-color: #5F9EA0; /* Slightly darker blue on hover */
+        }
 
-            .fc-highlight {
-                background-color: #87CEEB; /* Warna highlight yang sesuai */
-                opacity: 0.8;
-            }
+        .fc-button-active {
+            background-color: #5F9EA0;
+        }
 
-            /* Menambahkan desain untuk modal */
-            .modal-content {
-                background-color: #f0f8ff; /* Warna biru muda untuk modal */
-                border-radius: 10px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
+        .fc-day-header {
+            background-color: #f8f9fa;
+            color: #495057;
+        }
 
-            .modal-header {
-                background-color: #87CEEB; /* Warna header modal */
-                border-bottom: none;
-                color: #fff;
-                padding: 15px;
-                border-radius: 10px 10px 0 0;
-            }
+        .fc-day-number {
+            color: #007bff;
+        }
 
-            .modal-body {
-                padding: 20px;
-            }
+        .fc-today {
+            background-color: #e6f7ff;
+        }
 
-            .modal-footer {
-                border-top: none;
-                padding: 15px;
-                border-radius: 0 0 10px 10px;
-            }
+        .fc-content {
+            color: #343a40;
+        }
 
-            /* Menambahkan desain untuk tombol tutup modal */
-            .close {
-                color: #fff;
-                opacity: 1;
-            }
+        .fc-title {
+            font-weight: bold;
+        }
 
-            .close:hover {
-                color: #fff;
-                opacity: 0.8;
-            }
-        </style>
+        .fc-event {
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+        }
 
-        <!-- Menambahkan font Lato dari Google Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
-    </head>
-    <body>
+        .fc-event:hover {
+            background-color: #0056b3;
+        }
 
-<<<<<<< HEAD
-    <div class="container">
-=======
-        .fc-highlight {
-            background-color: #ffeeba;
-            opacity: 0.8;
+        .modal-content {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-header {
+            background-color: #007bff;
+            border-bottom: none;
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .modal-footer {
+            border-top: none;
+            padding: 15px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .close {
+            color: #007bff;
+        }
+
+        .close:hover {
+            color: #0056b3;
         }
     </style>
-    <!-- Menambahkan font Lato dari Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
 </head>
 <body>
-    <div class="container-fluid">
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> ff5eca9553f7f163ea0e9ea7b98f8588c5152711
-=======
->>>>>>> 8d7a4e64f1d5dafb39dda78f2bbc652fdbcafdd6
-=======
->>>>>>> 8d7a4e64f1d5dafb39dda78f2bbc652fdbcafdd6
+    <div class="container">
         <div id="calendar"></div>
     </div>
 
-    <!-- Modal untuk Detail Konsultasi -->
+    <!-- Modal -->
     <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -138,7 +144,27 @@
 
     <script>
         $(document).ready(function() {
+            // Get the current date
+            var currentDate = moment().format('YYYY-MM-DD');
+
+            // Check if there's a consultation today
+            var isConsultationToday = function(date) {
+                var consultationDates = ['2023-11-25', '2023-11-27', '2023-11-28'];
+                return consultationDates.includes(date);
+            };
+
+            // Display a notification if there's a consultation today
+            if (isConsultationToday(currentDate)) {
+                // You can customize the notification based on your needs
+                alert('You have a consultation today!');
+            }
+
             $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
                 events: [
                     {
                         title: 'Konsultasi Dr. Suktomo',
@@ -156,30 +182,13 @@
                         description: 'Konsultasi dengan Dr. Kartika Santi pada 28 November 2023'
                     }
                 ],
-                eventRender: function(event, element) {
-                    element.attr('title', event.description);
-                },
-                dayRender: function(date, cell) {
-                    if (date.format() === '2023-11-25' || date.format() === '2023-11-27' || date.format() === '2023-11-28') {
-                        cell.addClass('fc-highlight');
-                    }
-                },
-                header: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'month,agendaWeek,agendaDay'
-                },
-                dayClick: function(date, jsEvent, view) {
-                    if (date.format() === '2023-11-25' || date.format() === '2023-11-27' || date.format() === '2023-11-28') {
-                        $('#event-description').text('Konsultasi pada ' + date.format('D MMMM YYYY'));
-                        $('#eventModal').modal('show');
-                    }
+                eventClick: function(event, jsEvent, view) {
+                    $('#eventModalLabel').html(event.title);
+                    $('#event-description').html(event.description);
+                    $('#eventModal').modal();
                 }
             });
         });
     </script>
-    </body>
-    </html>
-</div>
-
-@endsection
+</body>
+</html>
