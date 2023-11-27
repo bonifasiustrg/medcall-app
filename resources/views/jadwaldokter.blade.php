@@ -2,38 +2,74 @@
 
 @section('content')
 
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>MEDCALL</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <style>
-    body {
-      background-color: #EFF5FF;
-    }
-    .navbar-atas {
-      background-color: #EFF5FF;
-      color: #000000;
-    }
-  </style>
-</head>
 
-<body>
 
-<div id="app"></div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div style="width: 60%; height: 100%; background: white; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.10); border-radius: 10px">
+    <img src="image/dokter1.png" alt="dokter1">
+    <div class="card-body">
+      <p>Spesialis Penyakit Dalam</p>
+        <h5 class="card-title">dr. Mega handayani</h5>
+        <p class="card-text">Rabu-Sabtu</p>
+        <p class="card-text">13.00 - 00.00 WIB</p>
+        <p><a href="#" class="text-decoration-none; fw-bold" style="color: #2771CA">Lihat Selengkapnya</a></p>
+      </div>
+</div>
+    </div>
 
-<script src="{{ mix('js/app.js') }}"></script>
-<script>
-  // Mengasumsikan Anda menggunakan Laravel Mix untuk mengompilasi aset
-  // Gantilah 'resources/js/components/JadwalDokter' dengan path yang benar ke komponen Anda
-  import JadwalDokter from './C:/belajar woi/medcall-app/resources/js/components/JadwalDokter';
+    <div class="col">
+    <div style="width: 60%; height: 100%; background: white; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.10); border-radius: 10px">
+    <img src="image/dokter1.png" alt="dokter1">
+    <div class="card-body">
+      <p>Spesialis Penyakit Dalam</p>
+        <h5 class="card-title">dr. Mega handayani</h5>
+        <p class="card-text">Rabu-Sabtu</p>
+        <p class="card-text">13.00 - 00.00 WIB</p>
+      </div>
+</div>
+    </div>
 
-  // Render komponen React
-  ReactDOM.render(<JadwalDokter />, document.getElementById('app'));
-</script>
+  </div>
 
-</body>
-</html>
-
+<!-- dump 
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+</div>
+-->
 @endsection
