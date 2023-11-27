@@ -101,7 +101,10 @@
 <body>
     <div class="container-fluid">
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> ff5eca9553f7f163ea0e9ea7b98f8588c5152711
+=======
+>>>>>>> 8d7a4e64f1d5dafb39dda78f2bbc652fdbcafdd6
 =======
 >>>>>>> 8d7a4e64f1d5dafb39dda78f2bbc652fdbcafdd6
         <div id="calendar"></div>
