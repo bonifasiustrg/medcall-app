@@ -32,6 +32,9 @@ Route::get('/skemaobat', function () {
 Route::get('/jadwaldokter', function () {
     return view('jadwaldokter');
 });
+Route::get('/antrian', function () {
+    return view('antrian');
+});
 Route::get('/darurat', function () {
     return view('darurat');
 });
