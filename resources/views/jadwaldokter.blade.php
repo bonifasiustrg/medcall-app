@@ -13,6 +13,7 @@
         <h5 class="card-title">dr. Mega handayani</h5>
         <p class="card-text">Rabu-Sabtu</p>
         <p class="card-text">13.00 - 00.00 WIB</p>
+        
         <p><a href="#" class="text-decoration-none; fw-bold" style="color: #2771CA">Lihat Selengkapnya</a></p>
       </div>
 </div>
