@@ -1,76 +1,163 @@
 @extends('layouts.app')
 
 @section('content')
-
-
-
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-    <div style="width: 60%; height: 100%; background: white; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.10); border-radius: 10px">
-    <img src="image/dokter1.png" alt="dokter1">
-    <div class="card-body">
-      <p>Spesialis Penyakit Dalam</p>
-        <h5 class="card-title">dr. Mega handayani</h5>
-        <p class="card-text">Rabu-Sabtu</p>
-        <p class="card-text">13.00 - 00.00 WIB</p>
-        
-        <p><a href="#" class="text-decoration-none; fw-bold" style="color: #2771CA">Lihat Selengkapnya</a></p>
+  <div class="container">
+    <div class="row row-cols-2 row-cols-md-5 g-4">
+      <div class="col mb-3">
+        <div class="card">
+          <div class="card-img-top">
+            <img src="image/dokter1.png" alt="dokter1" class="img-fluid">
+          </div>
+          <div class="card-body">
+          <p>Spesialis Penyakit Dalam</p>
+            <h5 class="card-title">dr. Mega Handayani</h5>
+            <p class="card-text">Rabu-Sabtu</p>
+            <p class="card-text">13.00 - 00.00 WIB</p>
+            <a href="#" class="text-decoration-none; fw-bold" style="color: #2771CA">Lihat Selengkapnya</a>
+          </div>
+        </div>
       </div>
+
+      <div class="col mb-3">
+        <div class="card">
+          <div class="card-img-top">
+            <img src="image/dokter1.png" alt="dokter1" class="img-fluid">
+          </div>
+          <div class="card-body">
+          <p>Spesialis Penyakit Dalam</p>
+            <h5 class="card-title">dr. Salsabila Susanti</h5>
+            <p class="card-text">Senin-Sabtu</p>
+            <p class="card-text">09.00 - 00.00 WIB</p>
+            <a href="#" class="text-decoration-none; fw-bold" style="color: #2771CA">Lihat Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-3">
+        <div class="card">
+          <div class="card-img-top">
+            <img src="image/dr cowo.png" alt="dr cowo" class="img-fluid">
+          </div>
+          <div class="card-body">
+          <p>Spesialis Penyakit Dalam</p>
+            <h5 class="card-title">dr. Pramudya Bagus</h5>
+            <p class="card-text">Selasa-Kamis</p>
+            <p class="card-text">06.00 - 00.00 WIB</p>
+            <a href="#" class="text-decoration-none; fw-bold" style="color: #2771CA">Lihat Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-3">
+        <div class="card">
+          <div class="card-img-top">
+            <img src="image/dr cowo.png" alt="dr cowo" class="img-fluid">
+          </div>
+          <div class="card-body">
+          <p>Spesialis Jiwa</p>
+            <h5 class="card-title">dr. Bambang Wijaksono</h5>
+            <p class="card-text">Rabu-Jumat</p>
+            <p class="card-text">10.00 - 00.00 WIB</p>
+            <a href="#" class="text-decoration-none; fw-bold" style="color: #2771CA">Lihat Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-3">
+        <div class="card">
+          <div class="card-img-top">
+            <img src="image/dr cowo.png" alt="dr cowo" class="img-fluid">
+          </div>
+          <div class="card-body">
+          <p>Spesialis Mata</p>
+            <h5 class="card-title">dr. Sudantoro Agus</h5>
+            <p class="card-text">Senin-Sabtu</p>
+            <p class="card-text">13.00 - 22.00 WIB</p>
+            <a href="#" class="text-decoration-none; fw-bold" style="color: #2771CA">Lihat Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-3">
+        <div class="card">
+          <div class="card-img-top">
+            <img src="image/dr cowo.png" alt="dr cowo" class="img-fluid">
+          </div>
+          <div class="card-body">
+          <p>Spesialis Gigi dan Mulut</p>
+            <h5 class="card-title">dr. Mamat Hasanudin</h5>
+            <p class="card-text">Selasa-Sabtu</p>
+            <p class="card-text">08.00 - 00.00 WIB</p>
+            <a href="#" class="text-decoration-none; fw-bold" style="color: #2771CA">Lihat Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-3">
+        <div class="card">
+          <div class="card-img-top">
+            <img src="image/dokter1.png" alt="dokter1" class="img-fluid">
+          </div>
+          <div class="card-body">
+          <p>Spesialis Gigi dan Mulut</p>
+            <h5 class="card-title">dr. Indah Berlian</h5>
+            <p class="card-text">Kamis-Sabtu</p>
+            <p class="card-text">10.00 - 00.00 WIB</p>
+            <a href="#" class="text-decoration-none; fw-bold" style="color: #2771CA">Lihat Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-3">
+        <div class="card">
+          <div class="card-img-top">
+            <img src="image/dokter1.png" alt="dokter1" class="img-fluid">
+          </div>
+          <div class="card-body">
+          <p>Spesialis Gigi dan Mulut</p>
+            <h5 class="card-title">dr. Mia Khalifah</h5>
+            <p class="card-text">Senin-Sabtu</p>
+            <p class="card-text">11.00 - 00.00 WIB</p>
+            <a href="#" class="text-decoration-none; fw-bold" style="color: #2771CA">Lihat Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-3">
+        <div class="card">
+          <div class="card-img-top">
+            <img src="image/dr cowo.png" alt="dr cowo" class="img-fluid">
+          </div>
+          <div class="card-body">
+          <p>Dokter Umum</p>
+            <h5 class="card-title">dr. Chirstian Julian</h5>
+            <p class="card-text">Rabu-Sabtu</p>
+            <p class="card-text">08.00 - 00.00 WIB</p>
+            <a href="#" class="text-decoration-none; fw-bold" style="color: #2771CA">Lihat Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-3">
+        <div class="card">
+          <div class="card-img-top">
+            <img src="image/dr cowo.png" alt="dr cowo" class="img-fluid">
+          </div>
+          <div class="card-body">
+          <p>Dokter Umum</p>
+            <h5 class="card-title">dr. Indra Perkasa</h5>
+            <p class="card-text">Rabu-Sabtu</p>
+            <p class="card-text">13.00 - 00.00 WIB</p>
+            <a href="#" class="text-decoration-none; fw-bold" style="color: #2771CA">Lihat Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-    </div>
 
-    <div class="col">
-    <div style="width: 60%; height: 100%; background: white; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.10); border-radius: 10px">
-    <img src="image/dokter1.png" alt="dokter1">
-    <div class="card-body">
-      <p>Spesialis Penyakit Dalam</p>
-        <h5 class="card-title">dr. Mega handayani</h5>
-        <p class="card-text">Rabu-Sabtu</p>
-        <p class="card-text">13.00 - 00.00 WIB</p>
-      </div>
-</div>
-    </div>
+<footer class="footer">
+  <img src="{{ asset('image/Rectangle 4213.png') }}" alt="Image" class="img-fluid w-100">
+</footer>
 
-  </div>
-
-<!-- dump 
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-</div>
--->
 @endsection
