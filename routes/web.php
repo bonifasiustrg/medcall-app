@@ -32,6 +32,9 @@ Route::get('/skemaobat', function () {
 Route::get('/jadwaldokter', function () {
     return view('jadwaldokter');
 });
+Route::get('/selesaidaftar', function () {
+    return view('selesaidaftar');
+});
 Route::get('/darurat', function () {
     return view('darurat');
 });
