@@ -36,7 +36,7 @@
     <body>
         <div class="content-container">
             <div class="image-container">
-                <img src="{{ asset('image/selesaidaftar.png') }}" alt="Gambar contoh" class="rounded" style="width: 550px; height: 400px;">
+                <img src="{{ asset('image/selesaidaftar.png') }}" alt="Gambar contoh" class="rounded" style="width: 600px; height: 450px;">
             </div>
             <div class="text-box">
                 <p>Selamat! Data Anda sudah tersimpan. <br> Silakan melihat pada bagian antrian di menu utama.</p>

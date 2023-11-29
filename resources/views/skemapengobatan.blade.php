@@ -81,7 +81,7 @@
             border: none;
         }
 
-        .form-group {
+        .form {
             margin-bottom: 0.5cm; /* Add spacing of 0.5cm between form groups */
         }
 
@@ -97,13 +97,13 @@
 </div>
 
 <div class="container">
-    <h2>Form Pendaftaran Pengobatan</h2>
+    <h2>Form Pendaftaran Pengobatan </h2>
     <form>
-        <div class="form-group">
+        <div class="form">
             <label for="nama">Nama*</label>
             <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap Anda">
         </div>
-        <div class="form-group">
+        <div class="form">
             <label for="poli">Pilih Poli*</label>
             <select class="form-control" id="poli" name="poli" required onchange="updateDokterOptions()">
                 <option value="" disabled selected hidden>Silahkan pilih poli</option>
@@ -115,14 +115,14 @@
             </select>
         </div>
 
-        <div class="form-group">
+        <div class="form">
             <label for="tanggal">Tanggal Konsultasi*</label>
             <div class="input-group">
                 <input type="date" class="form-control" id="tanggal" name="tanggal" required placeholder="Silahkan pilih tanggal">
                 <a type="button" class="btn btn-lihat-jadwal" href="/jadwaldokter">Lihat Jadwal Dokter</a>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form">
             <label for="dokter">Pilih Dokter*</label>
             <select required class="form-control" id="dokter" name="dokter">
                 <!-- Opsi dokter akan diperbarui dengan JavaScript -->
