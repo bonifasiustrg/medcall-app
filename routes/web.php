@@ -32,8 +32,13 @@ Route::get('/skemaobat', function () {
 Route::get('/jadwaldokter', function () {
     return view('jadwaldokter');
 });
+<<<<<<< HEAD
 Route::get('/selesaidaftar', function () {
     return view('selesaidaftar');
+=======
+Route::get('/antrian', function () {
+    return view('antrian');
+>>>>>>> 706c10e40f48fb3298dda2a165b97ef06e9f7ac5
 });
 Route::get('/darurat', function () {
     return view('darurat');

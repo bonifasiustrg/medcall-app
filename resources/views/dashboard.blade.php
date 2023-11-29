@@ -36,7 +36,7 @@
 
       </div>
       <div class="col-md-4">
-          <a class="btn btn-light btn-icon-split rounded-30px" style="border-radius: 15px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);" href="/jadwaldokter">
+          <a class="btn btn-light btn-icon-split rounded-30px" style="border-radius: 15px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);" href="/antrian">
             <img src="{{ asset('image/antrian.png') }}">
             Lihat Nomor Antrian
             </a>

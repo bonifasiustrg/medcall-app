@@ -119,7 +119,7 @@
             <label for="tanggal">Tanggal Konsultasi*</label>
             <div class="input-group">
                 <input type="date" class="form-control" id="tanggal" name="tanggal" required placeholder="Silahkan pilih tanggal">
-                <button type="button" class="btn btn-lihat-jadwal" onclick="lihatJadwal()">Lihat Jadwal Dokter</button>
+                <a type="button" class="btn btn-lihat-jadwal" href="/jadwaldokter">Lihat Jadwal Dokter</a>
             </div>
         </div>
         <div class="form-group">
