@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,8 +29,14 @@ Route::get('/pengingatjanji', function () {
 Route::get('/skemaobat', function () {
     return view('skemapengobatan');
 });
-Route::get('/jadwal', function () {
+Route::get('/jadwaldokter', function () {
     return view('jadwaldokter');
+});
+Route::get('/selesaidaftar', function () {
+    return view('selesaidaftar');
+});
+Route::get('/antrian', function () {
+    return view('antrian');
 });
 Route::get('/darurat', function () {
     return view('darurat');
@@ -38,3 +45,7 @@ Route::get('/darurat', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

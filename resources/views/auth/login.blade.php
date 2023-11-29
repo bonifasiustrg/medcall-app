@@ -9,7 +9,7 @@
     <div class="col">
         <h1 class="text-center", style="color: #2771CA">Selamat Datang!</h1>
         <p class="text-center", style="color: #555568">Silakan Masukkan Alamat Email, Kata Sandi dan Nomor Kartu Pengobatan Anda</p>
-        <form action="/dashboard">
+        <form action="{{ url('/login') }}" method="POST">
 
         <div class="form-group">
         <label for="email" style="color: #2771CA; font-size: 14px;" class="fw-bold">Email*</label>
