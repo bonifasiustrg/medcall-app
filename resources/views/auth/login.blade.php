@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+
+
 <div class="container-fluid">
     <div class="row align-items-start">
     <div class="col">
@@ -9,9 +12,10 @@
     <div class="col">
         <h1 class="text-center", style="color: #2771CA">Selamat Datang!</h1>
         <p class="text-center", style="color: #555568">Silakan Masukkan Alamat Email, Kata Sandi dan Nomor Kartu Pengobatan Anda</p>
-        <form action="{{ url('/login') }}" method="POST">
 
-        <div class="form-group">
+        <form method="POST" action="{{ route('login') }}">
+    @csrf
+    <div class="form-group">
         <label for="email" style="color: #2771CA; font-size: 14px;" class="fw-bold">Email*</label>
         <input type="email" class="form-control form-control-lg w-50 -71" id="email" name="email" required placeholder="Masukkan Alamat Email">
 
@@ -22,6 +26,7 @@
         <input type="text" class="form-control form-control-lg w-50 -71" id="card_number" name="card_number" required placeholder="Masukkan Nomor Kartu">
         </div>
         <br>
+
             <button type="submit" class="btn btn-primary w-50 -71" class="fw-bold" style="#2771CA">Login</button>
             <p><a href="/forgot-password" class="text-decoration-none" style="color: #000000">Lupa Kata Sandi?</a></p>
 </a>

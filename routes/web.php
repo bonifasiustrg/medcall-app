@@ -20,8 +20,8 @@ Route::middleware(['redirect.to.login'])->group(function () {
     Route::get('/login', function () {
         return view('login');
     });
-    Route::get('/dashboard', function () {
-        return view('dashboard');
+    Route::get('/home', function () {
+        return view('home');
     });
     Route::get('/pengingatjanji', function () {
         return view('pengingatjanji');
