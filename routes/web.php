@@ -13,37 +13,40 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware(['redirect.to.login'])->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
+    Route::get('/login', function () {
+        return view('login');
+    });
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    });
+    Route::get('/pengingatjanji', function () {
+        return view('pengingatjanji');
+    });
+    Route::get('/skemaobat', function () {
+        return view('skemapengobatan');
+    });
+    Route::get('/jadwaldokter', function () {
+        return view('jadwaldokter');
+    });
+    Route::get('/selesaidaftar', function () {
+        return view('selesaidaftar');
+    });
+    Route::get('/antrian', function () {
+        return view('antrian');
+    });
+    Route::get('/darurat', function () {
+        return view('darurat');
+    });
+    
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-Route::get('/pengingatjanji', function () {
-    return view('pengingatjanji');
-});
-Route::get('/skemaobat', function () {
-    return view('skemapengobatan');
-});
-Route::get('/jadwaldokter', function () {
-    return view('jadwaldokter');
-});
-Route::get('/selesaidaftar', function () {
-    return view('selesaidaftar');
-});
-Route::get('/antrian', function () {
-    return view('antrian');
-});
-Route::get('/darurat', function () {
-    return view('darurat');
 });
 
 Auth::routes();
-
+    
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
