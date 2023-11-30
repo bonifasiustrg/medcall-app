@@ -21,7 +21,6 @@
 </head>
 <body>
 
- 
   <div class="text-center">
     <img src="{{ asset('image/emergency.png') }}" alt="Gambar contoh" class="rounded">
   </div>
