@@ -15,14 +15,12 @@ use App\Http\Controllers\FormController;
 */
 Route::middleware(['redirect.to.login'])->group(function () {
     Route::get('/', function () {
-        return view('welcome');
+        return redirect()->route('home');
     });
     Route::get('/login', function () {
         return view('login');
     });
-    Route::get('/home', function () {
-        return view('home');
-    });
+
     Route::get('/pengingatjanji', function () {
         return view('pengingatjanji');
     });
@@ -54,6 +52,8 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // routes/web.php
 
-
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
 
 Route::post('/selesaidaftar', [FormController::class, 'selesaidaftar'])->name('selesaidaftar');
