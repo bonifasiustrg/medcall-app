@@ -98,8 +98,10 @@
 
 <div class="container">
     <h2>Form Pendaftaran Pengobatan </h2>
-    <form>
-        <div class="form">
+    <form action="/selesaidaftar" method="post">
+    @csrf
+
+    <div class="form">
             <label for="nama">Nama*</label>
             <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap Anda">
         </div>
@@ -131,6 +133,8 @@
         <button type="submit" class="btn btn-primary">SIMPAN</button>
     </form>
 </div>
+
+
 
 <nav class="navbar fixed-bottom navbar-light" style="background-color: #527BC0;">
     <div class="container-fluid">
