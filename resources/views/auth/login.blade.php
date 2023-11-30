@@ -2,7 +2,11 @@
 
 @section('content')
 
-
+<style>
+    body {
+        background-color: #EFF5FF; 
+    }
+</style>
 
 <div class="container-fluid">
     <div class="row align-items-start">
