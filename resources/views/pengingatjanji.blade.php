@@ -23,14 +23,96 @@
 
         #calendar {
             max-width: 600px;
-            max-height: 600px; /* Set max-height to limit the calendar height */
             margin: 0 auto;
-            background-color: #87CEEB; /* Light blue color */
+            background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Other styles remain the same */
+        .fc-header-toolbar {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+            border: none;
+        }
+
+        .fc-button {
+            background-color: #87CEEB; /* Light blue color */
+            color: #fff;
+            border: none;
+        }
+
+        .fc-button:hover {
+            background-color: #5F9EA0; /* Slightly darker blue on hover */
+        }
+
+        .fc-button-active {
+            background-color: #5F9EA0;
+        }
+
+        .fc-day-header {
+            background-color: #f8f9fa;
+            color: #495057;
+        }
+
+        .fc-day-number {
+            color: #007bff;
+        }
+
+        .fc-today {
+            background-color: #e6f7ff;
+        }
+
+        .fc-content {
+            color: #343a40;
+        }
+
+        .fc-title {
+            font-weight: bold;
+        }
+
+        .fc-event {
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .fc-event:hover {
+            background-color: #0056b3;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-header {
+            background-color: #007bff;
+            border-bottom: none;
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .modal-footer {
+            border-top: none;
+            padding: 15px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .close {
+            color: #007bff;
+        }
+
+        .close:hover {
+            color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -38,7 +120,31 @@
         <div id="calendar"></div>
     </div>
 
-    <!-- Modal and scripts remain the same -->
+    <!-- Modal -->
+    <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eventModalLabel">Detail Konsultasi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="event-description"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
 
     <script>
         $(document).ready(function() {
