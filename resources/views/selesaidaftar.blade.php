@@ -41,7 +41,7 @@
             <div class="text-box">
                 <p>Selamat! Data Anda sudah tersimpan. <br> Silakan melihat pada bagian antrian di menu utama.</p>
             </div>
-            <button class="btn btn-primary">Kembali</button>
+            <a class="btn btn-primary" href="/home">Kembali</a>
         </div>
     </body>
     </html>
