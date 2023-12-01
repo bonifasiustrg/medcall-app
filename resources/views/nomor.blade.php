@@ -17,25 +17,16 @@
       background-color: #EFF5FF;
       color: #000000;
     }
+    a {
+      font-size: 30px;
+    }
   </style>
 </head>
 <body>
-
-  <div class="text-center">
-    <img src="{{ asset('image/emergency.png') }}" alt="Gambar contoh" class="rounded">
-  </div>
-
-
-  <div style="text-align: right;">
-    <a type="button" class="btn btn-light" href="/nomor">
-      <img src="{{ asset('image/emergencycall.png') }}" alt="Image" class="img-fluid">
-    </a>
-  </div>
-
-</body>
+  <a href="tel:+6281221682383">+62 812-2168-2383</a>
 
 <footer class="footer">
-  <img src="{{ asset('image/Rectangle 4213.png') }}" alt="Image" class="img-fluid w-100" >
+  <img src="{{ asset('image/Rectangle 4213.png') }}" alt="Image" class="img-fluid w-100">
 </footer>
 
 @endsection

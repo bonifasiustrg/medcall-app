@@ -39,6 +39,10 @@ Route::middleware(['redirect.to.login'])->group(function () {
     Route::get('/darurat', function () {
         return view('darurat');
     });
+
+    Route::get('/nomor', function () {
+        return view('nomor');
+    });
     
 
 });
