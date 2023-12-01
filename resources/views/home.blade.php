@@ -51,7 +51,7 @@
   <!-- Navbar pada bagian bawah -->
   <nav class="navbar fixed-bottom navbar-light" style="background-color: #527BC0;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand">
     </div>
   </nav>
 
