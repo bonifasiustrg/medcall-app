@@ -2,35 +2,67 @@
 
 @section('content')
 
-<!-- Add this script inside the <script> tag in pengingatjanji.blade.php -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Tambahkan link CSS Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Tambahkan link CSS FullCalendar -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.css">
+  <style>
+    /* Gaya khusus untuk tanggal pengingat janji */
+    .reminder-day {
+      background-color: #87CEFA; /* Warna biru muda */
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2 class="mb-4">Kalender Pengingat Janji Klinik</h2>
+  <div id="reminder-calendar"></div>
+</div>
+
+<!-- Tambahkan link JavaScript Bootstrap dan jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Tambahkan link JavaScript FullCalendar -->
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
+
 <script>
-    $(document).ready(function() {
-        // Your existing script to initialize FullCalendar
+  // Inisialisasi kalender
+  document.addEventListener('DOMContentLoaded', function () {
+    var calendarEl = document.getElementById('reminder-calendar');
 
-        // Load consultations from the server and render them on the calendar
-        $.ajax({
-            url: '/get-consultations', // Adjust the endpoint as needed
-            method: 'GET',
-            success: function(response) {
-                renderConsultations(response);
-            },
-            error: function(error) {
-                console.error('Error fetching consultations:', error);
-            }
-        });
-
-        function renderConsultations(consultations) {
-            // Loop through each consultation and render it on the calendar
-            consultations.forEach(function(consultation) {
-                $('#calendar').fullCalendar('renderEvent', {
-                    title: consultation.nama,
-                    start: consultation.tanggal,
-                    description: 'Konsultasi dengan ' + consultation.dokter + ' pada ' + consultation.tanggal,
-                }, true);
-            });
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+      },
+      events: [
+        {
+          title: 'Konsultasi Poli Umum',
+          start: '2023-12-06',
+          className: 'reminder-day' // Menambahkan kelas untuk warna khusus
         }
+        // Anda dapat menambahkan acara lain di sini sesuai kebutuhan
+      ]
     });
+
+    calendar.render();
+  });
 </script>
+
+</body>
+</html>
+
 
 
 @endsection
