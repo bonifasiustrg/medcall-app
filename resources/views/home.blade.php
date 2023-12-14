@@ -14,7 +14,7 @@
         <div class="col-md-8">
             <div class="card-body" >
                 <!-- Konten lainnya di dalam card -->
-                <p class="" style="font-weight: 100; font-size: 2rem;">Halo, Bagoes!</p>
+                <p class="" style="font-weight: 100; font-size: 2rem;">Halo, {{ $userName }}!</p>
                 <h2 class="fs-3 fw-bold">Daftar Konsultasi Pengobatan dengan Dokter Sekarang</h2>
                 <p>Daftar konsultasi degan dokter sesuai gejala yang anda rasakan!</p>
                 <a href="/skemaobat" class="btn btn-primary fs-5 rounded-5" >Daftar Konsultasi</a>
@@ -51,7 +51,7 @@
   <!-- Navbar pada bagian bawah -->
   <nav class="navbar fixed-bottom navbar-light" style="background-color: #527BC0;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand">
     </div>
   </nav>
 

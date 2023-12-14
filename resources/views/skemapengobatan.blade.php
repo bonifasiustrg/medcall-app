@@ -130,7 +130,9 @@
                 <!-- Opsi dokter akan diperbarui dengan JavaScript -->
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">SIMPAN</button>
+        <form id="yourFormId" action="javascript:submitFormAndAddToCalendar()">
+    <button type="submit" class="btn btn-primary">SIMPAN</button>
+</form>
     </form>
 </div>
 
