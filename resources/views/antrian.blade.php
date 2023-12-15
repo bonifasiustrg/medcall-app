@@ -105,7 +105,8 @@
                     <div class="card-body" style="margin-bottom: 48px">
                         <p class="card-text">03</p>
                     </div>
-                    <h5 class="card-text">Rabu, 25 Okt 2023</h5>
+                    {{-- <h5 class="card-text">Rabu, 25 Okt 2023</h5> --}}
+                    <h5 class="card-text">{{ \Carbon\Carbon::now()->format('l, d M Y') }}</h5>
                     <h5 class="card-text">12.40 - 13.00WIB</h5>
                 </div>
             </div>
@@ -116,9 +117,10 @@
                         <p class="card-text">21</p>
                     </div>
 
-                    <h5 class="card-text">Rabu, 25 Okt 2023</h5>
+                    {{-- <h5 class="card-text">Rabu, 25 Okt 2023</h5> --}}
+                    <h5 class="card-text">{{ \Carbon\Carbon::now()->format('l, d M Y') }}</h5>
                     <h5 class="card-text">12.40 - 13.00WIB</h5>
-                    <p class="card-text" style="color: #527BC0; font-weight: 400;">Harap datang sebelum jam 08.00 </p>
+                    <p class="card-text" style="color: #527BC0; font-weight: 400;">Harap datang 10 menit sebelum<br> jadwal Anda </p>
                 </div>
             </div>
         </div>

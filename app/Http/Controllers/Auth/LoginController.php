@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -44,7 +44,18 @@ class LoginController extends Controller
     {
         $request->validate([
             $this->username() => 'required|string',
-            'password' => 'required|string'
+            'password' => 'required|string',
+            'roles' => 'required|string|in:pasien,admin', // Adjust as needed
         ]);
+    }
+
+    protected function credentials(Request $request)
+    {
+        return $request->only($this->username(), 'password') + ['role' => $request->input('roles')];
+    }
+
+    protected function attemptLogin(Request $request)
+    {
+        return Auth::attempt($this->credentials($request));
     }
 }
