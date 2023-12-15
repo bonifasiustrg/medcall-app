@@ -34,6 +34,28 @@
         </style>
     </head>
     <body>
+        <!-- Tambahkan ini di dalam tag <body> -->
+        <div class="modal fade" id="konfirmasiModal" tabindex="-1" aria-labelledby="konfirmasiModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="konfirmasiModalLabel">Konfirmasi Pengambilan Antrian</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Apakah Anda yakin ingin mengambil antrian?</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="setujuCheckbox">
+                            <label class="form-check-label" for="setujuCheckbox">Saya menyetujui ketentuan untuk mengambil antrian.</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-primary" id="setujuBtn">Setuju</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="content-container">
             <div class="image-container">
                 <img src="{{ asset('image/selesaidaftar.png') }}" alt="Gambar contoh" class="rounded" style="width: 600px; height: 450px;">
@@ -41,9 +63,26 @@
             <div class="text-box">
                 <p>Selamat! Data Anda sudah tersimpan. <br> Silakan melihat pada bagian antrian di menu utama.</p>
             </div>
-            <a class="btn btn-primary" href="/home">Kembali</a>
+
+            {{-- <a class="btn btn-primary" href="/home">Kembali</a> --}}
+
+            <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#konfirmasiModal">Ambil Antrian</a>
+
+
+            <script>
+                document.getElementById('setujuBtn').addEventListener('click', function () {
+                    // Periksa apakah checkbox persetujuan dicentang
+                    var checkbox = document.getElementById('setujuCheckbox');
+                    if (checkbox.checked) {
+                        // Redirect ke halaman antrian
+                        window.location.href = "/antrian";
+                    } else {
+                        // Tampilkan pesan kesalahan atau tindakan lain sesuai kebutuhan
+                        alert("Anda harus menyetujui ketentuan untuk mengambil antrian.");
+                    }
+                });
+            </script>
         </div>
-    </body>
     </html>
 </div>
 @endsection
