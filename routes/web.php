@@ -57,8 +57,12 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // routes/web.php
 
-Route::middleware(['auth'])->group(function () {
+Route::group(['middleware' => ['auth', 'cekrole:pasien']],function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
+
+Route::group(['middleware' => ['auth', 'cekrole:admin']],function () {
+    Route::get('/home', [App\Http\Controllers\DashboardAdminController::class, 'index'])->name('home');
 });
 
 Route::post('/selesaidaftar', [FormController::class, 'selesaidaftar'])->name('selesaidaftar');

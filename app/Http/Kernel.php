@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'redirect.to.login' => \App\Http\Middleware\RedirectToLogin::class,
         'web' => \App\Http\Middleware\VerifyCsrfToken::class,
+        'cekrole' => \App\Http\Middleware\CekRole::class,
     ];
 }
