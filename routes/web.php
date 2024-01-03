@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\AntrianController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\DashboardAdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
-use App\Http\Controllers\DashboardAdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,7 +37,7 @@ Route::middleware(['redirect.to.login'])->group(function () {
     });
     Route::get('/antrian', function () {
         return view('antrian');
-    });
+    })->name('antrianpage');
     Route::get('/darurat', function () {
         return view('darurat');
     });
@@ -60,11 +61,12 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::group(['middleware' => ['auth', 'cekrole:pasien']],function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
-
+Route::group(['middleware' => ['auth', 'cekrole:pasien,admin']],function () {
+    Route::post('/antrian-masuk', [AntrianController::class, 'store'])->name('antrian-masuk');
+});
 Route::group(['middleware' => ['auth', 'cekrole:admin']],function () {
-    Route::get('/home', [App\Http\Controllers\DashboardAdminController::class, 'index'])->name('home');
+    Route::get('/admin/home', [DashboardAdminController::class, 'index'])->name('home');
+    Route::get('/admin/antrian', [AntrianController::class, 'index'])->name('antrian');
 });
 
 Route::post('/selesaidaftar', [FormController::class, 'selesaidaftar'])->name('selesaidaftar');
-
-Route::get('/admin/home', [DashboardAdminController::class, 'index']);
