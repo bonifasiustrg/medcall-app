@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\DashboardAdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,3 +62,5 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::post('/selesaidaftar', [FormController::class, 'selesaidaftar'])->name('selesaidaftar');
+
+Route::get('/admin/home', [DashboardAdminController::class, 'index']);

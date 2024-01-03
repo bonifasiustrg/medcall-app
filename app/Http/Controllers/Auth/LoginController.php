@@ -30,6 +30,18 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+    protected function redirectTo()
+    {
+        $user = Auth::user();
+        if ($user->role == 'admin') {
+            return '/admin/home'; // Change this to the admin route
+        } elseif ($user->role == 'pasien') {
+            return '/home'; // Change this to the pasien route
+        }
+
+        return $this->redirectTo;
+    }
+
     /**
      * Create a new controller instance.
      *
