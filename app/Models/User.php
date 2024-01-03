@@ -43,4 +43,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'role' => 'string', // Tambahkan kolom 'role' ke casts
     ];
+
+    public function antrian() 
+    {
+        return $this->hasMany(Antrian::class);
+    }
 }
