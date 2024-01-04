@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +34,6 @@
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
 
 <script>
-  // Inisialisasi kalender
   document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('reminder-calendar');
 
@@ -46,13 +44,28 @@
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       },
+      // Menambahkan event click pada tanggal
+      dateClick: function(info) {
+        var selectedDate = info.dateStr;
+        var eventTitle = 'Konsultasi dengan dokter...'; // Ganti dengan dokter yang sesuai
+
+        // Menampilkan notifikasi
+        alert(eventTitle + ' pada tanggal ' + selectedDate);
+
+        // Highlight tanggal yang dipilih
+        calendar.addEvent({
+          title: eventTitle,
+          start: selectedDate,
+          className: 'reminder-day'
+        });
+      },
       events: [
         {
           title: 'Konsultasi Poli Umum',
           start: '2023-12-06',
-          className: 'reminder-day' // Menambahkan kelas untuk warna khusus
+          className: 'reminder-day'
         }
-        // Anda dapat menambahkan acara lain di sini sesuai kebutuhan
+        // ... Event lainnya ...
       ]
     });
 
@@ -62,7 +75,5 @@
 
 </body>
 </html>
-
-
 
 @endsection
