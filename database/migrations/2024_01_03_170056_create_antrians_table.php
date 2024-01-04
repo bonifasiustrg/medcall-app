@@ -17,8 +17,9 @@ class CreateAntriansTable extends Migration
             $table->id();
             $table->bigInteger('user_id');
             $table->date("tanggal");
-            $table->time("jammasuk")->nullable();
-            $table->time("jamkeluar")->nullable();
+            $table->time("waktuambiltiket")->nullable();
+            $table->time("waktugiliran")->nullable();
+            $table->string("status")->default('nonaktif'); // Tambahkan kolom status
             $table->timestamps();
         });
     }

@@ -12,7 +12,7 @@ class Antrian extends Model
     protected $table = "antrians";
     protected $primarykey = "id";
     protected $fillable = [
-        'id', 'user_id', 'tanggal', 'jammasuk', 'jamkeluar'
+        'id', 'user_id', 'tanggal', 'waktuambiltiket', 'waktugiliran', 'status'
     ];
 
     public function user()
