@@ -96,14 +96,21 @@
     </style>
 </head>
 <body>
-
     <div class="content">
         <div class="row">
             <div class="product col-lg-6" style="padding: 0 5px;">
                 <div class="card">
                     <h2 class="card-title">Antrian Saat Ini</h2>
                     <div class="card-body" style="margin-bottom: 48px">
-                        <p class="card-text">03</p>
+                        <p class="card-text">
+                            @php
+                            $antrianAktif = \App\Models\Antrian::where('status', 'aktif')->first();
+                            $antrianId = $antrianAktif ? $antrianAktif->id : null;
+                            @endphp
+                            {{ $antrianId ? '' . $antrianId : 'Tidak ada Antrian aktif saat ini.' }}
+                            
+
+                        </p>
                     </div>
                     {{-- <h5 class="card-text">Rabu, 25 Okt 2023</h5> --}}
                     <h5 class="card-text">{{ \Carbon\Carbon::now()->format('l, d M Y') }}</h5>
@@ -114,7 +121,15 @@
                 <div class="card">
                     <h2 class="card-title">Antrian Anda</h2>
                     <div class="card-body" style="margin-bottom: 48px">
-                        <p class="card-text">21</p>
+                        <p class="card-text">
+                            @php
+                            $user = Auth::user();
+                            $antrianAktif = \App\Models\Antrian::where('user_id', $user->id)->where('status', 'nonaktif')->first();
+                            $antrianId = $antrianAktif ? $antrianAktif->id : null;
+                            @endphp
+                            {{ $antrianId ? '' . $antrianId : 'Anda tidak punya No Antrian' }}
+
+                        </p>
                     </div>
 
                     {{-- <h5 class="card-text">Rabu, 25 Okt 2023</h5> --}}
