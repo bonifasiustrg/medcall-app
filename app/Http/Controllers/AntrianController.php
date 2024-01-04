@@ -89,11 +89,65 @@ class AntrianController extends Controller
                 'waktuambiltiket' => $localtime,
                 'waktugiliran' => $localtime,
             ]);
-            
+
+            if (auth()->user()->role == 'admin') {
+                return redirect()->route('antrian'); // Ganti 'dashboard' dengan nama route admin
+            } elseif (auth()->user()->role == 'pasien') {
+                return redirect()->route('antrianpage'); // Ganti 'noantrian' dengan nama route user
+            }
         }
 
-        return redirect('antrian-masuk');
+        // return redirect('antrian-masuk');
     }
+
+
+    /**
+     * Mengubah status antrian menjadi aktif dan mengubah status antrian sebelumnya menjadi done
+     */
+    public function next_antrian()
+    {
+        // $antrian_aktif = $this->get_antrian_aktif();
+        $antrian_aktif = Antrian::where('status', 'aktif')->first();
+
+        if ($antrian_aktif) {
+            $antrian_aktif->status = "done";
+            $antrian_aktif->save();
+
+            $antrian_berikutnya = Antrian::where([
+                ['status', '=', 'nonaktif'],
+                ['tanggal', '=', $antrian_aktif->tanggal],
+            ])->orderBy('id', 'asc')->firstOrFail();
+
+            if ($antrian_berikutnya) {
+                $antrian_berikutnya->status = "aktif";
+                $antrian_berikutnya->save();
+
+                $this->antrian_aktif = $antrian_berikutnya;
+            } else {
+                throw new \Exception("Tidak ada antrian berikutnya"); // menampilkan response jika tidak ada antrian berikutnya
+            }
+            return redirect()->route('antrian');
+        } else if (is_null($antrian_aktif)) {
+            $antrian = Antrian::where('status', '=', 'nonaktif')->orderBy('id', 'asc')->firstOrFail();
+
+            if ($antrian) {
+                $antrian->status = "aktif";
+                $antrian->save();
+    
+                $this->antrian_aktif = $antrian;
+            } else {
+                throw new \Exception("Tidak ada antrian dengan ID 1"); // menampilkan response jika tidak ada antrian dengan ID 1
+            }
+
+            return redirect()->route('antrian');
+
+        } else {
+            // return redirect()->route('antrian');
+            dd("Gagal melanjutkan antrian"); //menampilkan response
+
+        }
+    }
+    
 
 
         /**
