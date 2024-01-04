@@ -15,10 +15,12 @@ use App\Http\Controllers\FormController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return redirect()->route('login');
+});
+
 Route::middleware(['redirect.to.login'])->group(function () {
-    Route::get('/', function () {
-        return redirect()->route('home');
-    });
+
     Route::get('/login', function () {
         return view('login');
     });
@@ -51,7 +53,9 @@ Route::middleware(['redirect.to.login'])->group(function () {
 
 Auth::routes();
     
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => ['auth', 'cekrole:pasien']], function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
 
 
 Route::post('/login', [LoginController::class, 'login']);
@@ -64,7 +68,7 @@ Route::group(['middleware' => ['auth', 'cekrole:pasien']],function () {
 Route::group(['middleware' => ['auth', 'cekrole:pasien,admin']],function () {
     Route::post('/antrian-masuk', [AntrianController::class, 'store'])->name('antrian-masuk');
 });
-Route::group(['middleware' => ['auth', 'cekrole:admin']],function () {
+Route::group(['middleware' => ['auth', 'cekrole:admin']], function () {
     Route::get('/admin/home', [DashboardAdminController::class, 'index'])->name('home');
     Route::get('/admin/antrian', [AntrianController::class, 'index'])->name('antrian');
 });
