@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
     <title>MEDCALL</title>
+    <!-- Tambahkan link CSS Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
         body {
@@ -98,10 +99,9 @@
 
 <div class="container">
     <h2>Form Pendaftaran Pengobatan </h2>
-    <form action="/selesaidaftar" method="post">
-    @csrf
-
-    <div class="form">
+    <form id="yourFormId">
+        @csrf
+        <div class="form">
             <label for="nama">Nama*</label>
             <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap Anda">
         </div>
@@ -116,7 +116,6 @@
                 <option value="Poli Mata">Poli Mata</option>
             </select>
         </div>
-
         <div class="form">
             <label for="tanggal">Tanggal Konsultasi*</label>
             <div class="input-group">
@@ -130,17 +129,13 @@
                 <!-- Opsi dokter akan diperbarui dengan JavaScript -->
             </select>
         </div>
-        <form id="yourFormId" action="javascript:submitFormAndAddToCalendar()">
-    <button type="submit" class="btn btn-primary">SIMPAN</button>
-</form>
+        <button type="button" class="btn btn-primary" onclick="submitFormAndAddToCalendar()">SIMPAN</button>
     </form>
 </div>
 
-
-
 <nav class="navbar fixed-bottom navbar-light" style="background-color: #527BC0;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#"></a>
     </div>
 </nav>
 
@@ -171,11 +166,49 @@
         }
     }
 
-    function lihatJadwal() {
-        alert('Menampilkan jadwal dokter...');
-    }
+    function submitFormAndAddToCalendar() {
+        var nama = document.getElementById('nama').value;
+        var poli = document.getElementById('poli').value;
+        var tanggal = document.getElementById('tanggal').value;
+        var dokter = document.getElementById('dokter').value;
 
-    window.onload = updateDokterOptions;
+        // Validasi form (Anda bisa menambahkan validasi sesuai kebutuhan)
+
+        // Kirim data ke server (disarankan menggunakan AJAX atau HTTP request)
+        // Contoh menggunakan Fetch API
+        fetch('/selesaidaftar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            },
+            body: JSON.stringify({
+                nama: nama,
+                poli: poli,
+                tanggal: tanggal,
+                dokter: dokter,
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Data berhasil disimpan, tambahkan ke kalender pengingat janji
+            var calendarEl = document.getElementById('reminder-calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl);
+
+            calendar.addEvent({
+                title: 'Konsultasi dengan ' + dokter + ' (' + poli + ')',
+                start: tanggal,
+                className: 'reminder-day'
+            });
+
+            // Tampilkan notifikasi
+            alert('Data berhasil disimpan dan ditambahkan ke kalender pengingat janji.');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Terjadi kesalahan. Silakan coba lagi.');
+        });
+    }
 </script>
 </body>
 </html>
