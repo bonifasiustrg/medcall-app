@@ -101,23 +101,6 @@ class AntrianController extends Controller
     }
 
 
-        /**
-     * Variabel untuk menyimpan antrian yang sedang aktif
-     */
-    private $antrian_aktif;
-
-    /**
-     * Mendapatkan antrian yang sedang aktif
-     */
-    public function get_antrian_aktif()
-    {
-        if ($this->antrian_aktif) {
-            return $this->antrian_aktif;
-        } else {
-            return null;
-        }
-    }
-
     /**
      * Mengubah status antrian menjadi aktif dan mengubah status antrian sebelumnya menjadi done
      */
@@ -165,6 +148,97 @@ class AntrianController extends Controller
         }
     }
     
+
+
+        /**
+     * Variabel untuk menyimpan antrian yang sedang aktif
+     */
+    private $antrian_aktif;
+
+    /**
+     * Mendapatkan antrian yang sedang aktif
+     */
+    public function get_antrian_aktif()
+    {
+        if ($this->antrian_aktif) {
+            return $this->antrian_aktif;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Mengubah status antrian menjadi aktif dan mengubah status antrian sebelumnya menjadi done
+     */
+    public function next_antrian()
+    {
+        // $antrian_aktif = $this->get_antrian_aktif();
+        $antrian_aktif = Antrian::where('status', 'aktif')->first();
+
+        if ($antrian_aktif) {
+            $antrian_aktif->status = "done";
+            $antrian_aktif->save();
+
+            $antrian_berikutnya = Antrian::where([
+                ['status', '=', 'nonaktif'],
+                ['tanggal', '=', $antrian_aktif->tanggal],
+            ])->orderBy('id', 'asc')->firstOrFail();
+
+            if ($antrian_berikutnya) {
+                $antrian_berikutnya->status = "aktif";
+                $antrian_berikutnya->save();
+
+                $this->antrian_aktif = $antrian_berikutnya;
+            } else {
+                throw new \Exception("Tidak ada antrian berikutnya"); // menampilkan response jika tidak ada antrian berikutnya
+            }
+            return redirect()->route('antrian');
+        } else if (is_null($antrian_aktif)) {
+            $antrian = Antrian::where('id', 1)->first();
+            $antrian = Antrian::where('status', '=', 'nonaktif')->orderBy('id', 'asc')->firstOrFail();
+
+            if ($antrian) {
+                $antrian->status = "aktif";
+                $antrian->save();
+    
+                $this->antrian_aktif = $antrian;
+            } else {
+                throw new \Exception("Tidak ada antrian dengan ID 1"); // menampilkan response jika tidak ada antrian dengan ID 1
+            }
+
+            return redirect()->route('antrian');
+
+        } else {
+            throw new \Exception("Gagal melanjutkan antrian"); //menampilkan response
+
+        }
+    }
+    // public function nextQueue()
+    // {
+    //     // Temukan antrian yang aktif
+    //     $activeQueue = Antrian::where([
+    //         ['user_id', '=', auth()->user()->id],
+    //         ['status', '=', 'aktif'],
+    //     ])->first();
+
+    //     if ($activeQueue) {
+    //         // Nonaktifkan antrian saat ini
+    //         $activeQueue->update(['status' => 'nonaktif']);
+
+    //         // Temukan antrian selanjutnya (berdasarkan id atau urutan)
+    //         $nextQueue = Antrian::where([
+    //             ['user_id', '=', auth()->user()->id],
+    //             ['id', '>', $activeQueue->id], // Atau sesuaikan dengan logika urutan antrian
+    //         ])->orderBy('id', 'asc')->first();
+
+    //         if ($nextQueue) {
+    //             // Aktifkan antrian selanjutnya
+    //             $nextQueue->update(['status' => 'aktif']);
+    //         }
+    //     }
+
+    //     return redirect()->back(); // Redirect kembali ke halaman sebelumnya
+    // }
 
     /**
      * Display the specified resource.
