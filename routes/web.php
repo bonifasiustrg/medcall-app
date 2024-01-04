@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardAdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\AppointmentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -74,3 +75,7 @@ Route::group(['middleware' => ['auth', 'cekrole:admin']], function () {
 });
 
 Route::post('/selesaidaftar', [FormController::class, 'selesaidaftar'])->name('selesaidaftar');
+
+Route::get('/pengingatjanji', [AppointmentController::class, 'index']);
+Route::get('/jadwal-appointments', [AppointmentController::class, 'getAppointments']);
+Route::post('/selesaidaftar', [AppointmentController::class, 'create']);
