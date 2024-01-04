@@ -89,10 +89,15 @@ class AntrianController extends Controller
                 'waktuambiltiket' => $localtime,
                 'waktugiliran' => $localtime,
             ]);
-            
+
+            if (auth()->user()->role == 'admin') {
+                return redirect()->route('antrian'); // Ganti 'dashboard' dengan nama route admin
+            } elseif (auth()->user()->role == 'pasien') {
+                return redirect()->route('antrianpage'); // Ganti 'noantrian' dengan nama route user
+            }
         }
 
-        return redirect('antrian-masuk');
+        // return redirect('antrian-masuk');
     }
 
 
@@ -140,7 +145,6 @@ class AntrianController extends Controller
             }
             return redirect()->route('antrian');
         } else if (is_null($antrian_aktif)) {
-            $antrian = Antrian::where('id', 1)->first();
             $antrian = Antrian::where('status', '=', 'nonaktif')->orderBy('id', 'asc')->firstOrFail();
 
             if ($antrian) {
@@ -155,36 +159,12 @@ class AntrianController extends Controller
             return redirect()->route('antrian');
 
         } else {
-            throw new \Exception("Gagal melanjutkan antrian"); //menampilkan response
+            // return redirect()->route('antrian');
+            dd("Gagal melanjutkan antrian"); //menampilkan response
 
         }
     }
-    // public function nextQueue()
-    // {
-    //     // Temukan antrian yang aktif
-    //     $activeQueue = Antrian::where([
-    //         ['user_id', '=', auth()->user()->id],
-    //         ['status', '=', 'aktif'],
-    //     ])->first();
-
-    //     if ($activeQueue) {
-    //         // Nonaktifkan antrian saat ini
-    //         $activeQueue->update(['status' => 'nonaktif']);
-
-    //         // Temukan antrian selanjutnya (berdasarkan id atau urutan)
-    //         $nextQueue = Antrian::where([
-    //             ['user_id', '=', auth()->user()->id],
-    //             ['id', '>', $activeQueue->id], // Atau sesuaikan dengan logika urutan antrian
-    //         ])->orderBy('id', 'asc')->first();
-
-    //         if ($nextQueue) {
-    //             // Aktifkan antrian selanjutnya
-    //             $nextQueue->update(['status' => 'aktif']);
-    //         }
-    //     }
-
-    //     return redirect()->back(); // Redirect kembali ke halaman sebelumnya
-    // }
+    
 
     /**
      * Display the specified resource.

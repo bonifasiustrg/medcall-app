@@ -98,8 +98,8 @@
 <body>
     <div class="content">
         <div class="row">
-            <div class="product col-lg-6" style="padding: 0 5px;">
-                <div class="card">
+            < class="product col-lg-6" style="padding: 0 5px;">
+                < class="card">
                     <h2 class="card-title">Antrian Saat Ini</h2>
                     <div class="card-body" style="margin-bottom: 48px">
                         <p class="card-text">
@@ -114,9 +114,7 @@
                     </div>
                     {{-- <h5 class="card-text">Rabu, 25 Okt 2023</h5> --}}
                     <h5 class="card-text">{{ \Carbon\Carbon::now()->format('l, d M Y') }}</h5>
-                    <h5 class="card-text">12.40 - 13.00WIB</h5>
-                </div>
-            </div>
+                    <h5 class="card-text">12.4gn n;gt
             <div class="product2 col-lg-6" style="padding: 5px 0;">
                 <div class="card">
                     <h2 class="card-title">Antrian Anda</h2>
