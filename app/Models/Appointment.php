@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Appointment extends Model
 {
-    protected $fillable = [
-        'nama', 'poli', 'tanggal', 'dokter'
-    ];
-    
+    use HasFactory;
+    protected $fillable = ['nama', 'poli', 'tanggal', 'dokter'];
 }
