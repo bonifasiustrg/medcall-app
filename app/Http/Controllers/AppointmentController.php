@@ -11,7 +11,7 @@ class AppointmentController extends Controller
     public function index()
     {
         $appointments = Appointment::all();
-    return view('appointments.index', ['appointments' => $appointments]);
+    return view('/pengingatjanji', ['appointments' => $appointments]);
     }
 
     // Menampilkan formulir untuk membuat janji temu baru
