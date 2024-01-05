@@ -72,4 +72,9 @@ class AppointmentController extends Controller
 
         return redirect('/appointments')->with('success', 'Janji temu berhasil dihapus.');
     }
+    public function pengingatjanji()
+    {
+        $appointments = Appointment::all();
+        return view('pengingatjanji', compact('appointments'));
+    }
 }

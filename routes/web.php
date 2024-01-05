@@ -76,3 +76,4 @@ Route::group(['middleware' => ['auth', 'cekrole:admin']], function () {
 
 Route::post('/selesaidaftar', [FormController::class, 'selesaidaftar'])->name('selesaidaftar');
 
+Route::get('/pengingatjanji', [AppointmentController::class, 'pengingatjanji'])->name('pengingatjanji');
