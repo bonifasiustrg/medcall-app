@@ -1,13 +1,8 @@
-
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html lang="en">
+
 <head>
     <title>Admin/Staff | MedCall</title>
-
     @include('admin.templete.head')
     <script src="{{ asset('js/jam.js') }}"></script>
     <style>
@@ -30,89 +25,85 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 4px 4px 30px rgba(210, 25, 16, 0.4),
                 4px 4px 40px rgba(210, 15, 06, 0.4);
         }
-
     </style>
 </head>
+
 <body class="hold-transition sidebar-mini" onload="realtimeClock()">
-<div class="wrapper">
-    @include('admin.templete.navbar')
-    @include('admin.templete.sidebar')
+    <div class="wrapper">
+        @include('admin.templete.navbar')
+        @include('admin.templete.sidebar')
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1 class="m-0">Antrian Hari Ini</h1>
-            </div><!-- /.col -->
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Antrian Hari Ini</li>
-                </ol>
-            </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-        </div>
-        <!-- /.content-header -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Antrian Hari Ini</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="/admin/home">Home</a></li>
+                                <li class="breadcrumb-item active"><a href="/admin/antrian">Antrian Hari Ini</a></li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
 
-        <!-- Main content -->
-        <div class="content" >
-            <div class="row justify-content-center">
-                <div class="card card-info card-outline">
-                    <div class="card-header">Presensi Masuk</div>
-                    <div class="card-body">
-                        <form action="{{ route('antrian-masuk') }}" method="post">
-                            {{ csrf_field() }}
-                            <div class="form-group center">
-                                <center>
-                                    <label id="clock" style="font-size: 100px; color: #0A77DE; -webkit-text-stroke: 3px #00ACFE;
-                                                text-shadow: 4px 4px 10px #36D6FE,
-                                                4px 4px 20px #36D6FE,
-                                                4px 4px 30px#36D6FE,
-                                                4px 4px 40px #36D6FE;">
-                                    </label>
-                                </center>
-                            </div>
-                            <center>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Ambil No Antrian</button>
+            <!-- Main content -->
+            <div class="content">
+                <div class="row justify-content-center">
+                    <div class="card card-info card-outline">
+                        <div class="card-header">Presensi Masuk</div>
+                        <div class="card-body">
+                            <form action="{{ route('antrian-masuk') }}" method="post">
+                                {{ csrf_field() }}
+                                <div class="form-group center">
+                                    <center>
+                                        <label id="clock"
+                                            style="font-size: 100px; color: #0A77DE; -webkit-text-stroke: 3px #00ACFE; text-shadow: 4px 4px 10px #36D6FE, 4px 4px 20px #36D6FE, 4px 4px 30px#36D6FE, 4px 4px 40px #36D6FE;">
+                                        </label>
+                                    </center>
                                 </div>
-                            </center>
-                        </form>
-
+                                <center>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Ambil No Antrian</button>
+                                    </div>
+                                </center>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- /.content -->
         </div>
-        <!-- /.content -->
+        <!-- /.content-wrapper -->
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+            <div class="p-3">
+                <h5>Title</h5>
+                <p>Sidebar content</p>
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
+
+        @include('admin.templete.footer')
     </div>
-    <!-- /.content-wrapper -->
+    <!-- ./wrapper -->
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-        <div class="p-3">
-        <h5>Title</h5>
-        <p>Sidebar content</p>
-        </div>
-    </aside>
-    <!-- /.control-sidebar -->
+    <!-- REQUIRED SCRIPTS -->
 
-    @include('admin.templete.footer')
-
-    </div>
-<!-- ./wrapper -->
-
-<!-- REQUIRED SCRIPTS -->
-
-<!-- jQuery -->
+    <!-- jQuery -->
     <script src="{{ asset('AdminLte/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{ asset('AdminLte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('AdminLte/dist/js/adminlte.min.js') }}"></script>
-    </body>
+</body>
+
 </html>

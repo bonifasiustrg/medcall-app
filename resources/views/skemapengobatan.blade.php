@@ -129,7 +129,13 @@
                 <!-- Opsi dokter akan diperbarui dengan JavaScript -->
             </select>
         </div>
+        <input type="hidden" id="selectedDoctor" name="selectedDoctor">
+        <form id="yourFormId" action="javascript:submitFormAndAddToCalendar()">
+    <button type="submit" class="btn btn-primary">SIMPAN</button>
+</form>
+
         <button type="button" class="btn btn-primary" onclick="submitFormAndAddToCalendar()">SIMPAN</button>
+
     </form>
 </div>
 
@@ -172,6 +178,19 @@
         var tanggal = document.getElementById('tanggal').value;
         var dokter = document.getElementById('dokter').value;
 
+    function submitFormAndAddToCalendar() {
+        // Get the selected doctor from the dropdown
+        var selectedDoctor = document.getElementById('dokter').value;
+
+        // Set the selected doctor in the hidden input field
+        document.getElementById('selectedDoctor').value = selectedDoctor;
+
+        // Submit the form
+        document.getElementById('yourFormId').submit();
+    }
+
+    window.onload = updateDokterOptions;
+
         // Validasi form (Anda bisa menambahkan validasi sesuai kebutuhan)
 
         // Kirim data ke server (disarankan menggunakan AJAX atau HTTP request)
@@ -209,6 +228,7 @@
             alert('Terjadi kesalahan. Silakan coba lagi.');
         });
     }
+>>>>>>> 24b041f4e92cecbee71fecd12d538fa2bea18ac9
 </script>
 </body>
 </html>
