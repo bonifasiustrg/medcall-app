@@ -6,7 +6,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Admin/Staff | MedCall</title>
+
+    @include('admin.templete.head')
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -17,7 +20,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="{{ asset('AdminLte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('AdminLte/dist/css/adminlte.min.css') }}">
-    @include('admin.templete.head')
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -32,92 +34,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Dashboard</h1>
+                <h1 class="m-0">Log Aktivitas Reservasi & Antrian Klinik</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Starter Page</li>
+                <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                <li class="breadcrumb-item active">Log</li>
                 </ol>
             </div><!-- /.col -->
             </div><!-- /.row -->
 
 
-        <!-- Small Box (Stat card) -->
-        <div class="row">
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small card -->
-                            <div class="small-box bg-warning">
-                            <div class="inner">
-                                <h3>{{ count($users) }}</h3>
-            
-                                <p>User Registrations</p>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-user-plus"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">
-                                More info <i class="fas fa-arrow-circle-right"></i>
-                            </a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small card -->
-                            <div class="small-box bg-danger">
-                            <div class="inner">
-                                <h3>{{ count($antrians) }}</h3>
-            
-                                <p>Total reservasi</p>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-chart-pie"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">
-                                More info <i class="fas fa-arrow-circle-right"></i>
-                            </a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-            <div class="col-lg-3 col-6">
-                <!-- small card -->
-                <div class="small-box bg-info">
-                <div class="inner">
-                    <h3>{{ $doneAntriansCount }}</h3>
-                    
-
-                    <p>Antrian Selesai</p>
-                </div>
-                <div class="icon">
-                    <i class="fas fa-shopping-cart"></i>
-                </div>
-                <a href="#" class="small-box-footer">
-                    More info <i class="fas fa-arrow-circle-right"></i>
-                </a>
-                </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-                <!-- small card -->
-                <div class="small-box bg-success">
-                <div class="inner">
-                    {{-- <h3>53<sup style="font-size: 20px">%</sup></h3> --}}
-                    <h3>{{ $pendingAntriansCount }}</h3>
-
-                    <p>Antrian Pending</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-stats-bars"></i>
-                </div>
-                <a href="#" class="small-box-footer">
-                    More info <i class="fas fa-arrow-circle-right"></i>
-                </a>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.row -->
+        
 
         </div><!-- /.container-fluid -->
         </div>
@@ -127,27 +55,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="content">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Daftar User</h3>
+            <h3 class="card-title">Tabel Antrian</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
+                        <th>Antrian ID</th>
                         <th>User ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Role</th>
+                        <th>Tanggal</th>
+                        <th>Waktu Ambil</th>
+                        <th>Status Antrian</th>
                         <!-- Add more columns as needed -->
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($users as $user)
+                    @foreach($antrians as $antrian)
                         <tr>
-                            <td>{{ $user->id }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->role }}</td>
+                            <td>{{ $antrian->id }}</td>
+                            <td>{{ $antrian->user_id  }}</td>
+                            <td>{{ $antrian->tanggal }}</td>
+                            <td>{{ $antrian->waktuambiltiket }}</td>
+                            <td>{{ $antrian->status }}</td>
                             <!-- Add more columns as needed -->
                         </tr>
                     @endforeach
@@ -245,9 +175,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @include('admin.templete.footer')
 
     </div>
-    <!-- ./wrapper -->
-
-    <!-- REQUIRED SCRIPTS -->
+<!-- ./wrapper -->
 
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
