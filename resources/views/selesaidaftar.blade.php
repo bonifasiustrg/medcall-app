@@ -79,7 +79,7 @@
                 <img src="{{ asset('image/selesaidaftar.png') }}" alt="Gambar contoh" class="rounded" style="width: 600px; height: 450px;">
             </div>
             <div class="text-box">
-                <p>Selamat! Data Anda sudah tersimpan. <br> Silakan melihat pada bagian antrian di menu utama.</p>
+                <p>Selamat! Data Anda sudah tersimpan. <br> Silakan klik "Ambil Antrian" untuk mengambil antrian Anda.</p>
             </div>
 
             {{-- <a class="btn btn-primary" href="/home">Kembali</a> --}}
