@@ -74,6 +74,7 @@ php artisan serve
 ![image](https://github.com/bonifasiustrg/medcall-app/assets/52784596/dcc46b35-61c5-4e59-9a4f-ce675448be91)
 ![image](https://github.com/bonifasiustrg/medcall-app/assets/52784596/1fb11a79-2ca9-4f2d-a5b3-5a152190accc)
 ![image](https://github.com/bonifasiustrg/medcall-app/assets/52784596/5fb46898-f56d-4670-920e-2c47e3e61dce)
+![Screenshot from 2024-01-05 13-10-41](https://github.com/bonifasiustrg/medcall-app/assets/52784596/8e901277-df5e-4b8e-83b6-1245b776d471)
 
 
 ## Contributors ✨
