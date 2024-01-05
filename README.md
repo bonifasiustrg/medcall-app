@@ -1,7 +1,22 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1 align="center">
+  <br>
+  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://github.com/bonifasiustrg/medcall-app/assets/52784596/7a6666fd-70f2-4786-b934-6a4090b524d8" alt="MedCall" width="200"></a>
+  <br>
+  MedCall
+  <br>
+</h1>
+<h4 align="center">Website Sistem Reservasi dan Antrian Klinik</h4>
 
+## Key Features
 
-# MedCall
+* Pendaftaran reservasi klinik
+* Sistem Antrian
+  - ambil antrian (pasien/admin)
+  - Mulai dan lanjutkan antrian (admin only)
+* User management (admin only)
+* Print data antrian dan user (admin only)
+* Login/registration scheme
+
 ~
 This laravel project also implementing:
 - Arsitektur MVC (Model-View-Controller)
@@ -47,6 +62,20 @@ php artisan migrate
 php artisan key:generate
 ``` 
 - Running server
-```git
-php artisan serve
-```
+```git                        
+php artisan serve            
+```                                                                                                                        
+                                                            
+## Preview
+![image](https://github.com/bonifasiustrg/medcall-app/assets/52784596/cd2ec043-db38-4913-b32f-1f11926df767)
+![image](https://github.com/bonifasiustrg/medcall-app/assets/52784596/8f3c3699-9e3f-4b11-a788-8bc1a2a7aea6)
+![image](https://github.com/bonifasiustrg/medcall-app/assets/52784596/f12cca91-0504-4df4-8a23-c2828a7bfcb3)
+![image](https://github.com/bonifasiustrg/medcall-app/assets/52784596/56071823-d5b5-4f41-a10d-6c95bc5695af)
+![image](https://github.com/bonifasiustrg/medcall-app/assets/52784596/dcc46b35-61c5-4e59-9a4f-ce675448be91)
+![image](https://github.com/bonifasiustrg/medcall-app/assets/52784596/1fb11a79-2ca9-4f2d-a5b3-5a152190accc)
+![image](https://github.com/bonifasiustrg/medcall-app/assets/52784596/5fb46898-f56d-4670-920e-2c47e3e61dce)
+
+
+## Contributors ✨
+Thanks goes to these wonderful people that have contributed in this project
+
