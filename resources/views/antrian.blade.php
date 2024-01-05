@@ -139,10 +139,19 @@
                         <p class="card-text">
                             @php
                             $user = Auth::user();
-                            $antrianAktif = \App\Models\Antrian::where('user_id', $user->id)->where('status', 'aktif')->first();
+                            $antrianAktif = \App\Models\Antrian::where('user_id', $user->id)->where('status', 'nonaktif')->first();
+                            $antrianAktifkan = \App\Models\Antrian::where('user_id', $user->id)->where('status', 'aktif')->first();
+
                             $antrianId = $antrianAktif ? $antrianAktif->id : null;
                             @endphp
-                            {{ $antrianId ? '' . $antrianId : 'Anda tidak punya No Antrian' }}
+                            {{-- {{ $antrianId ? '' . $antrianId : 'Anda tidak punya No Antrian' }} --}}
+                            @if($antrianId)
+                                {{ $antrianId }}
+                            @elseif ($antrianAktifkan)
+                                Giliran Anda
+                            @else
+                                Anda tidak punya No Antrian
+                            @endif
 
                         </p>
                     </div>
