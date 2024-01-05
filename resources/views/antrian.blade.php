@@ -56,11 +56,26 @@
         align-items: center;
         justify-content: center;
         /* Untuk mengatur tinggi seukuran layar, Anda bisa menggunakan 100vh (100% dari viewport height) */
-        height: 80vh;
+        height: 70vh;
         padding: 20px;
         display: flex; /* Menjadikan container sebagai flex container */
     }    
+    .contentBack {
+        width: 100vw;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        /* Untuk mengatur tinggi seukuran layar, Anda bisa menggunakan 100vh (100% dari viewport height) */
+        height: 10vh;
+        padding: 20px;
+        display: flex; /* Menjadikan container sebagai flex container */
+    }   
+    .contentBack div {
+        margin: auto; /* Memposisikan elemen di tengah secara horizontal dan vertikal */
 
+        margin-right: 30px;
+        margin-left: 30px;
+    }
     .content div {
         margin: auto; /* Memposisikan elemen di tengah secara horizontal dan vertikal */
 
@@ -98,8 +113,8 @@
 <body>
     <div class="content">
         <div class="row">
-            < class="product col-lg-6" style="padding: 0 5px;">
-                < class="card">
+            <div class="product col-lg-6" style="padding: 0 5px;">
+                <div class="card">
                     <h2 class="card-title">Antrian Saat Ini</h2>
                     <div class="card-body" style="margin-bottom: 48px">
                         <p class="card-text">
@@ -114,7 +129,9 @@
                     </div>
                     {{-- <h5 class="card-text">Rabu, 25 Okt 2023</h5> --}}
                     <h5 class="card-text">{{ \Carbon\Carbon::now()->format('l, d M Y') }}</h5>
-                    <h5 class="card-text">12.4gn n;gt
+                    <h5 class="card-text">12.40 - 13.00WIB</h5>
+                </div>
+            </div>
             <div class="product2 col-lg-6" style="padding: 5px 0;">
                 <div class="card">
                     <h2 class="card-title">Antrian Anda</h2>
@@ -122,7 +139,7 @@
                         <p class="card-text">
                             @php
                             $user = Auth::user();
-                            $antrianAktif = \App\Models\Antrian::where('user_id', $user->id)->where('status', 'nonaktif')->first();
+                            $antrianAktif = \App\Models\Antrian::where('user_id', $user->id)->where('status', 'aktif')->first();
                             $antrianId = $antrianAktif ? $antrianAktif->id : null;
                             @endphp
                             {{ $antrianId ? '' . $antrianId : 'Anda tidak punya No Antrian' }}
@@ -138,6 +155,13 @@
             </div>
         </div>
     </div>
+
+    <div class="contentBack">
+        <!-- Your existing content section -->
+
+        <a href="{{ url('/') }}" class="btn btn-primary">Back to Home</a>
+    </div>
+
 </body>
 
 <footer class="footer">
