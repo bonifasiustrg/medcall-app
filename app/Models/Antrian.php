@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Models\Appointment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,5 +19,10 @@ class Antrian extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function appointment()
+    {
+        return $this->belongsTo(Appointment::class);
     }
 }

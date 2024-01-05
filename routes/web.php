@@ -69,6 +69,7 @@ Route::group(['middleware' => ['auth', 'cekrole:pasien,admin']],function () {
 });
 Route::group(['middleware' => ['auth', 'cekrole:admin']],function () {
     Route::get('/admin/home', [DashboardAdminController::class, 'index'])->name('dashboard');
+    Route::get('/admin/log', [DashboardAdminController::class, 'log'])->name('log');
     Route::get('/admin/antrian', [AntrianController::class, 'index'])->name('antrian');
     Route::get('/next-queue', [AntrianController::class, 'next_antrian'])->name('next-queue');
     

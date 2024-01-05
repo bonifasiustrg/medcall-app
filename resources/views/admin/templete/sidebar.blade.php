@@ -65,10 +65,10 @@
             </li>
 
             <li class="nav-menu">
-                <a href="#" class="nav-link inactive">
+                <a href="{{ route('log') }}" class="nav-link inactive">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
-                    Laporan
+                    Log Aktivitas
                     <i class="right fas fa-angle-left"></i>
                 </p>
                 </a>

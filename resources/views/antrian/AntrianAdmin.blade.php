@@ -136,7 +136,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </label>
                                 </center>
                             </div>
-                            <div class="product col-lg-6" style="padding: 0 5px;">
+                            <div class="product center" style="padding: 0 5px;">
                                 <div class="card">
                                     <h2 class="card-title">Antrian Saat Ini</h2>
                                     <div class="card-body" style="margin-bottom: 48px; border-radius: 32px;
