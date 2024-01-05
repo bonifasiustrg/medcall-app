@@ -7,6 +7,8 @@ use DateTime;
 use DateTimeZone;
 use Illuminate\Http\Request;
 
+use function PHPUnit\Framework\isNull;
+
 class AntrianController extends Controller
 {
     /**
@@ -110,6 +112,15 @@ class AntrianController extends Controller
     {
         // $antrian_aktif = $this->get_antrian_aktif();
         $antrian_aktif = Antrian::where('status', 'aktif')->first();
+        $antrian_nonaktif =Antrian::where('status', 'nonaktif')->first();
+
+        if (is_null($antrian_nonaktif)) {
+            if ($antrian_aktif) {
+                $antrian_aktif->status = "done";
+                $antrian_aktif->save();
+            }
+            return redirect()->route('antrian');
+        }
 
         if ($antrian_aktif) {
             $antrian_aktif->status = "done";
