@@ -47,11 +47,13 @@
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       },
       events: [
-        {
-          title: 'Konsultasi Poli Umum',
-          start: '2023-12-06',
-          className: 'reminder-day' // Menambahkan kelas untuk warna khusus
-        }
+        @foreach($appointments as $appointment)
+          {
+            title: '{{ $appointment->nama }} ({{ $appointment->poli }})',
+            start: '{{ $appointment->tanggal }}',
+            className: 'reminder-day' // Menambahkan kelas untuk warna khusus
+          },
+        @endforeach
         // Anda dapat menambahkan acara lain di sini sesuai kebutuhan
       ]
     });
@@ -62,7 +64,5 @@
 
 </body>
 </html>
-
-
 
 @endsection
