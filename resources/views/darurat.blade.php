@@ -27,7 +27,7 @@
 
 
   <div style="text-align: right;">
-    <a type="button" class="btn btn-light" href="/nomor">
+    <a type="button" class="btn btn-light" href="tel:+6281221682383">
       <img src="{{ asset('image/emergencycall.png') }}" alt="Image" class="img-fluid">
     </a>
   </div>
